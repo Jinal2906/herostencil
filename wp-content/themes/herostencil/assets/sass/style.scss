@@ -1,0 +1,42 @@
+@charset 'UTF-8';
+
+/* Theme fonts goes here */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700');
+
+// Configuration and helpers
+@import
+	'abstracts/variables',
+	'abstracts/mixins';
+
+// Base stuff
+@import
+	'base/fonts',
+	'base/normalize',
+	'base/helpers',
+	'base/typography',
+	'base/button',
+	'base/forms';
+
+// Vendors
+@import
+	'vendors/general';
+
+// Components
+@import
+	'components/header',
+	'components/footer';
+
+// Homepage Parts
+@import
+	'parts/welcome',
+    'parts/testimonial',
+    'parts/service',
+    'parts/appointment',
+    'parts/blog';
+
+// Page-specific styles
+@import
+	'pages/home',
+	'pages/default'; 
+
+//global style code goes here

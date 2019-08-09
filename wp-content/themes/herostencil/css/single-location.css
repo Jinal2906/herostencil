@@ -1,0 +1,143 @@
+
+/* location details */
+.content {padding-bottom: 0;}
+.content > .wrapper .mid {padding: 0; background: transparent; }
+.content > .wrapper .sidebar {min-width: 200px;max-width: 200px;  border-radius: 8px;}
+.side-gallery-main {box-shadow: 0px 1px 3px rgba(0,0,0,0.16); padding: 15px;}
+.location-banner {position: relative; margin-bottom: 20px;}
+.location-banner h1 {position: absolute;top: 50%; transform: translate(0,-50%);-webkit-transform: translate(0,-50%);left: 0;right: 0;text-align: center;font-size: 36px;line-height: normal; color: #fff; text-shadow: 3px 3px 4px rgba(0,0,0,0.45);-webkit-text-shadow: 3px 3px 4px rgba(0,0,0,0.45);text-transform: capitalize; }
+h2, h3, h4 {color: #252869;}
+
+.location-content p {
+    text-align: center;
+}
+
+/* location services section */
+.center-text {text-align: center;}
+.location-service { width: 100%; height: auto; position: relative; padding: 50px 0 20px; }
+.location-service ul {margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; width: calc(100% + 20px); margin-left: -10px;}
+.location-service li {width: calc(33.33% - 20px); margin: 10px; text-align: center;}
+.location-service .image { width: 100%; height: 150px; display: flex; justify-content: center; align-items: flex-end; margin-bottom: 20px;}
+.location-service .image svg {width: 150px; height: 150px; }
+.location-service .image svg * {fill:#BC3A00;}
+
+/* side gallery section */
+.side-gallery h5 { color: #194077; font-size: 12px; line-height: 16px; font-weight: 700; border-bottom: 1px solid #D6D6D6; padding-bottom: 10px; margin-bottom: 10px; }
+.side-gallery a.galleryitem {  margin-bottom: 20px; }
+.side-gallery a.galleryitem .innbaner { padding-top: 70%; margin-bottom: 12px; }
+.location-info-part { width: 100%; height: auto; position: relative; display: flex; flex-wrap: wrap; width: calc(100% + 20px); margin-left: -10px; justify-content: center;}
+.location-info-part .location-info {width: calc(33.33% - 20px); margin: 10px; }
+.location-info-part .location-info h4 {margin-bottom: 12px;}
+.location-info-part .location-info, .location-info-part .location-info p, .location-info-part .location-info a {font-size: 18px; font-weight: 400; line-height: 1.25; }
+.location-info-part .socialmedialinks ul {justify-content: flex-start;}
+.location-info-part .socialmedialinks a {line-height: 1;}
+
+/* Location Therapist */
+.location-therapists-section {  width: 100%; height: auto; display: block; position: relative; background: #fff; z-index: 1; }
+.location-therapists-section:before { width: 100%; height: 120px; background: #f1f1f1; position: absolute; content: ""; left: 0; top: 0; z-index: -1;}
+.location-therapists-section .wrapper {background: #FAFAFA; padding: 30px; box-sizing: border-box; box-shadow: 0px 1px 3px rgba(0,0,0,0.16);}
+.location-therapists { }
+.location-therapists-section  h3 { color: #252869; text-align: center; margin-bottom: 35px;}
+ul.staff-list { width: 60%; padding: 0 5% !important; }
+ul.staff-list li { margin: 0 25px; border: 1px solid #C6C6C6; }
+ul.staff-list .staff-short {background: #252869;}
+.staff-short {text-align: center;}
+.staff-short h5 {color: #fff;font-weight: 400;margin: 0;line-height: 1.2}
+.staff-short a {color: #fff;font-size: 13px;text-transform: uppercase;}
+.staff-short a:hover {color: #BC3A00;}
+.staff-short {padding: 12px 20px;min-height: auto;}
+ul.staff-list li .staff_img a { }
+ul.staff-list .innbaner { padding-top: 118%; }
+ul.staff-list li .staff_img a img {}
+.location-staff-section { display: flex; justify-content: space-between; align-items: flex-start;}
+.location-staff-text {width: 35%;}
+/* .location-therapists .slick-next { position: absolute; right: 0; top: 50%; transform: translateY(-50%); -webkit-transform: translateY(-50%); width: 48px; height: 48px; display: block; cursor: pointer; background: url(images/next-icon-staff.png) no-repeat center center; text-indent: -9999px; border: 0; } */
+/* image content section */
+.image-content-block {width: 100%; height: auto; display: block; position: relative; padding: 50px 0; background: #fff; }
+.image-content-block .wrapper { display: flex; }
+.image-content-block .image-block {min-width: 500px; max-width: 500px; display: block; }
+.image-content-block .image-block .inn-image {padding-top: 100%;}
+.image-content-block .content-block {flex: 1 0 0%; padding-left: 30px; }
+
+/* location testimonials section */
+.location-testimonial { background: #252869; padding: 50px 0; }
+.location-testimonial h2 {text-align: center; color: #fff; margin-bottom: 40px;position: relative;padding: 0 100px;}
+.location-testimonial h2:before {content: "“";display: block;position: absolute;color: #fff; font-size: 200px;top: 57px;left: 0px;font-family: sans-serif;line-height: 0; opacity: 0.6; }
+.location-testimonial p { font-size: 14px; color: #fff; margin:0; }
+.location-testimonial h5 { font-size: 16px; color: #fff; margin: 15px 0 0; padding: 0; font-weight: 400; }
+.location-testimonial .slick-prev, .location-testimonial .slick-next { background: #fff; color: #000; }
+.location-testimonial .slick-prev:hover, .location-testimonial .slick-next:hover {background: #BC3A00; }
+.location-testimonial .testimonial-slide { padding: 0 80px; box-sizing: border-box; max-width: 1000px; width: 100%; margin: 0 auto; }
+.testimonial-items {padding: 0 5px;}
+
+/* Location Map */
+.location-maps .location-map{height: 500px;width: 100%;}
+
+/* Request Appointment */
+.request-appointment { padding: 50px 0; position: relative; background:#252869; }
+.request-appointment .wrapper { position: relative; display: flex; justify-content: space-between; align-items: center;}
+.request-appointment .nf-form-cont p { color: #fff; }
+.request-appointment h2 { color: #fff; font-size: 34px; }
+.request-appointment .req-content { width: 350px; padding-right: 20px;}
+.request-appointment .req-content h4 {color: #fff; font-size: 25px; line-height: 1.4; font-weight: 700;}
+.request-appointment .req-content p {color: #fff;border-top: 1px solid #fff;padding-top: 23px;}
+.request-appointment .req-form { width: 620px; text-align: center;}
+
+/** request appointment form CSS */
+.request-appointment .nf-field-element input[type="text"], .request-appointment .nf-field-element input[type="email"], .request-appointment .nf-field-element input[type="tel"], .request-appointment .nf-field-element select, .request-appointment .nf-field-element textarea {border: 1px solid #fff; background: #404043; color: #fff; }
+.request-appointment ::-webkit-input-placeholder { color: #fff; opacity:1;}
+.request-appointment ::-moz-placeholder { color: #fff; opacity:1;}
+.request-appointment :-ms-input-placeholder { color: #fff; opacity:1;}
+.request-appointment :-moz-placeholder { color: #fff; opacity:1;}
+.request-appointment .submit-container .nf-field-element, .request-appointment .recaptcha-container .nf-field-element{ width: auto; position: relative; margin: 0 auto; }
+.request-appointment .submit-container .nf-field-element:before {content:"";background: url(../images/req-arrow.png) no-repeat; background-position: right center; width: 64px; height: 48px; display: block; position: absolute; top: 50%; right: -30px; -webkit-transform: translateY(-50%);-ms-transform: translateY(-50%);-o-transform: translateY(-50%);transform: translateY(-50%);}
+.submit-container .submit-wrap .nf-field-element { background: #bc3a00; }
+
+@media (max-width:992px){
+    .location-staff-section {flex-wrap: wrap;}
+    .location-staff-text {width: 100%; text-align: center;}
+    ul.staff-list {width: 100%;}
+    .image-content-block .wrapper {flex-wrap: wrap;}
+    .image-content-block .image-block {min-width: 400px; max-width: 400px; margin: 0 auto 30px; }
+    .image-content-block .content-block {flex: 1 0 100%; padding-left: 0; text-align: center;}
+    .location-maps .location-map {height: 300px;}
+    .request-appointment .wrapper {
+        flex-wrap: wrap;
+    }
+
+    .request-appointment .req-content {
+        width: 100%;
+        margin-right: 0;
+        text-align: center;
+    }
+    .request-appointment .req-form {
+        width: 100%;
+        padding-top: 25px;
+    }
+}
+@media (max-width:767px){
+    .content > .wrapper .sidebar {min-width: 100%; max-width: 100%; }
+    .gallery {display: flex; width: calc(100% + 16px); margin-left: -8px; flex-wrap: wrap;}
+    .side-gallery a.galleryitem { width: calc(25% - 16px); display: block; margin: 8px;}
+    .location-testimonial h2:before { font-size: 150px; top: 45px;}
+    .location-service ul {justify-content: center;}
+    .location-service li {width: calc(50% - 20px);}
+    .location-info-part .location-info {width: calc(50% - 20px);}
+    .location-maps .location-map {
+        height: 250px;
+    }
+}
+@media (max-width: 640px){
+    .location-banner h1 {padding: 0 15px;font-size: 28px;}
+    .location-testimonial h2 {padding: 0 20px 0 65px;}
+    .location-testimonial h2:before {font-size: 120px;}
+}
+@media (max-width:480px){
+    .location-testimonial h2 {font-size: 21px;}
+    .side-gallery a.galleryitem {width: calc(50% - 16px);}
+    .location-info-part .location-info {width: calc(100% - 20px);}
+    .location-service li {width: calc(100% - 20px);}
+    .location-testimonial .testimonial-slide {padding: 0 40px;}
+    .slick-prev, .slick-next {width: 30px; height: 30px; font-size: 20px;}
+    .image-content-block .image-block {max-width: 100%; min-width: 100%;}
+}

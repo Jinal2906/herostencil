@@ -1,0 +1,21 @@
+/********** ebook page start **********/
+.help-block { position: relative; text-align: center; }
+.help-block .ebook-wrapper { margin: 20px 0 0 0; display: flex; flex-wrap: wrap; width: calc(100% + 20px); margin-left: -15px;}
+.help-block .ebook-block { width: calc(33.33% - 30px); margin: 15px; text-align: center; cursor: pointer; }
+.help-block .ebook-block img {max-height: 250px; transition: 0.3s ease all;}
+.help-block .ebook-block:hover img {transform: scale(1.15);}
+.help-block h2 {font-size: 24px; line-height: 1.2;}
+.pupup_frm { border: 1px solid #e0e0e0; padding: 20px; width: 500px; }
+
+@media (max-width:992px){
+    .help-block h2 {font-size: 20px;}
+}
+@media (max-width:767px){
+    .help-block h2 {font-size: 18px;}
+    .help-block .ebook-block {width: calc(50% - 30px);}
+}
+@media (max-width:480px){
+    .help-block h2 {font-size: 17px;}
+     .help-block .ebook-block {width: calc(100% - 30px);}
+}
+/********** ebook page end **********/

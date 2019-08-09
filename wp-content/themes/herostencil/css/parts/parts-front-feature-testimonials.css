@@ -1,0 +1,13 @@
+.feature-testimonials {width: 100%; height: auto; display: block; position: relative; background: #cbcbce; padding: 50px 0;}
+.feature-testimonials .wrapper {display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;}
+.feature-testimonials h2 {font-size: 1.8rem; color: #171eb8; line-height: 1.2; text-transform: uppercase; width: 100%; text-align: center; flex: 1 0 100%;}
+.feature-testimonials .left-image {width: 45%; flex: 1 0 0%;}
+.feature-testimonials .left-image img {max-width: initial;}
+.feature-testimonials .right-content { width: 55%; flex: 1 0 0%; padding-left: 80px;}
+.feature-testimonials h3 {position: relative;}
+.feature-testimonials .title-icon {position: absolute; top: 0; left: -20px; -webkit-transform: translateX(-100%);-ms-transform: translateX(-100%);-o-transform: translateX(-100%);transform: translateX(-100%); display: flex; justify-content: center;}
+.feature-testimonials p {color: #171eb8; }
+.feature-testimonials h4 {color: #171eb8; }
+.feature-testimonials h4 span {color: #fe0000;}
+.feature-testimonials .btn-center {}
+.feature-testimonials .read-more {}

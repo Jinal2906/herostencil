@@ -1,0 +1,20 @@
+/* location list page */
+.locations-list{display: flex; flex-wrap: wrap;width: calc(100% + 20px); margin-left: -10px;}
+.locations-list .loc_list{max-width: calc(33.33% - 20px); width: 100%; margin: 10px 10px 20px ;padding-bottom: 45px; position: relative; border: 1px solid #252869;}
+.locations-list .loc_list .location_content {padding: 20px; }
+.locations-list .loc_list .location_btns {position: absolute; bottom: 0; left: 0; width: 100%;display: flex;}
+.locations-list .loc_list .location_btns a {width: 50%; padding: 12px; background: #252869; color: #FFF; text-align: center;font-size: 15px; } 
+.locations-list .loc_list .location_btns a:hover{background: #000}
+.locations-list .location_btns a.map_btn {background:#BC3A00; }
+.location_content .adrs{font-weight: 700; color: #252869;}
+.location_content p, .location_content span{font-size: 18px;line-height: 1.5}
+.location-contact span{font-weight: 700; color: #252869;}
+.location-contact{font-size: 18px;line-height: 1.5}
+.location-contact a:hover{color:#BC3A00;}
+@media (max-width:992px){
+    .locations-list .loc_list {max-width: calc(50% - 20px);}
+}
+@media (max-width:480px){
+    .locations-list .loc_list {max-width: calc(100% - 20px);}
+}
+

@@ -1,0 +1,35 @@
+.request-appointment {width: 100%; height: auto; display: block; position: relative; }
+.request-appointment .wrapper {display: flex; flex-wrap: wrap; justify-content: space-between;}
+.request-appointment .left-content {width: 44%; padding: 25px; background: #8D3006; position: relative;}
+.request-appointment .right-form {width: 54%; padding: 25px; background: #656569;}
+
+/** typo */
+.request-appointment .left-content h2 {color: #fff;}
+.request-appointment .left-content p {color: #fff;}
+.request-appointment .left-content p a {color: #fff;}
+.request-appointment .left-content img {position: absolute; bottom: 15px; right: 15px;}
+
+/** request appointment form CSS */
+.request-appointment .nf-field-element input[type="text"], .request-appointment .nf-field-element input[type="email"], .request-appointment .nf-field-element input[type="tel"], .request-appointment .nf-field-element select, .request-appointment .nf-field-element textarea {border: 1px solid #fff; background: #404043; color: #fff; }
+.request-appointment ::-webkit-input-placeholder { color: #fff; opacity:1;}
+.request-appointment ::-moz-placeholder { color: #fff; opacity:1;}
+.request-appointment :-ms-input-placeholder { color: #fff; opacity:1;}
+.request-appointment :-moz-placeholder { color: #fff; opacity:1;}
+
+.request-appointment .nf-error-msg, .request-appointment .ninja-forms-req-symbol { color: #ffb3b3; }
+/*
+.request-appointment .field-wrap button, .request-appointment .field-wrap input[type=button], .request-appointment .field-wrap input[type=submit] {background: #8d3006; padding-right:35px; border-color: #8d3006; text-transform: uppercase; font-weight: 700; font-size: 16px; }
+*/
+.request-appointment .submit-container .nf-field-element, .request-appointment .recaptcha-container .nf-field-element{ width: auto; position: relative; margin: 0 auto; }
+.request-appointment .submit-container .nf-field-element:before {content:"";background: url(../../images/req-arrow.png) no-repeat; background-position: right center; width: 64px; height: 48px; display: block; position: absolute; top: 50%; right: -30px; -webkit-transform: translateY(-50%);-ms-transform: translateY(-50%);-o-transform: translateY(-50%);transform: translateY(-50%);}
+
+@media (max-width:992px){
+    .request-appointment .left-content {width: 100%; margin-bottom: 20px;}
+    .request-appointment .right-form {width: 100%;}
+
+}
+
+@media (max-width:767px){
+    .request-appointment .left-content img {display: none;}
+    .request-appointment .left-content {text-align: center;}
+}

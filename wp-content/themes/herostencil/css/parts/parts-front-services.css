@@ -1,0 +1,20 @@
+.services-section { width: 100%; height: auto; display: block; position: relative; text-align: center; padding: 50px 0;}
+.services-section .wrapper {}
+.services-section ul {display: flex; flex-wrap: wrap; width: calc(100% + 20px); margin-left: -10px; list-style: none;}
+.services-section li {width: calc(33.33% - 20px); margin: 10px; position: relative;}
+.services-section li .service-image {width: 100%; padding-top: 80%; position: relative; overflow: hidden; height: 0; margin-bottom: 10px;}
+.services-section li .service-image img {position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%);-ms-transform: translate(-50%, -50%);-o-transform: translate(-50%, -50%);transform: translate(-50%, -50%); width: 100%; height: 100%; object-fit: cover; }
+.services-section li .service-content {width: 100%; height: 100%; padding: 15px; background: rgba(241,241,241,0.8); display: flex; justify-content: center; align-content: center; flex-wrap: wrap; position: absolute; top:0; left: 0; opacity: 0; -webkit-transition: 0.5s ease all;-o-transition: 0.5s ease all;transition: 0.5s ease all;}
+.services-section li:hover .service-content {opacity: 1;}
+/** services section typo */
+.services-section h2 { color: #252869; }
+.services-section li h2 { font-size: 20px; color: #000;}
+.services-section li h3 { font-size: 1.2rem; color: #8D3006; }
+
+
+@media (max-width:767px){
+    
+}
+@media (max-width:480px){
+    .services-section li {width: 100%;}
+}

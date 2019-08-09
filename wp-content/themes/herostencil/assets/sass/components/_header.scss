@@ -1,0 +1,303 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+/*--- header ---*/
+.sticky-header{
+    header{
+        background:linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 100%);
+    }
+    header.sticky{
+        background: $white;
+    }
+}
+
+/* Header */
+header {
+    background: $white;
+    width: 100%;
+    height: auto;
+    @include display(block);
+    @include position(fixed, 0, auto, auto, 0);
+    padding: 15px 0;
+    z-index: 999;
+    @include transition(0.5s);
+    box-sizing: border-box;
+    .wrapper{
+        @include display(flex, space-between, wrap, center);
+    }
+
+    /* Header Logo */
+    .header-logo{
+        width: 220px;
+        height: auto;
+        @include display(block);
+        @include position(relative);
+        margin-right: 20px;
+        a{
+            @include position(relative);
+            width: 100%;
+            height: auto;
+            @include display(block);
+            @include transition(0.5s);
+        }
+        img{
+            @include transition(0.5s);
+        }
+    }
+    .sticky-logo, .small-logo{
+        @include display(none);
+    }
+
+    /* Header right navigation */
+    .header-navigation{
+        flex: 1 0 0%;
+        @include display(flex,flex-end,wrap);
+    }
+    .quick-links{
+        width: 100%; 
+        height: auto;
+        @include display(block);
+        @include position(relative);
+    }
+    .contact-links{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        @include display(flex,flex-end,wrap);
+        li{
+            @include position(relative);
+            margin: 0;
+            margin-left: 15px;
+            padding:0;
+            pointer-events: all;
+            z-index: 99;
+            a{
+                font-size: 14px;
+                border-radius: 5px;
+                text-transform: uppercase;
+                color: $white;
+                font-weight: 700;
+                @include transition(0.5s);
+                @include display(block);
+                background: $brand-primary;
+                padding: 12px 20px;
+                @include position(relative);
+            }
+            .quick-dropdown{
+                min-width: 100%;
+                margin: 0;
+                padding: 0;
+                @include position(absolute, 50%, auto, auto, 0); 
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                background: $brand-primary;
+                z-index: inherit;
+                list-style: none;
+                border-radius: 8px;
+                overflow: hidden;
+                li{
+                    margin-left: 0;
+                    &:hover{
+                        a{
+                            background: $brand-secondary;
+                            color: $white;
+                        }
+                    }
+                    a{
+                        white-space: nowrap;
+                        padding: 8px 15px;
+                        font-size: 80%;
+                        color: $white;
+                        font-family: 'Roboto Condensed', sans-serif;
+                        @include display(block);
+                        border-radius:0;
+                    }
+                }
+            }
+        }
+        li.call{
+            a{
+                pointer-events: none;
+            }
+            .call-icon{
+                @include display(none);
+            }
+            &:hover{
+                .quick-dropdown{
+                    opacity: 1;
+                    visibility: visible;
+                    top: 95%;
+                    pointer-events: inherit;
+                    z-index: 99;
+                }
+            }
+        }
+        li.appt-btn{
+            a{
+                background: $brand-secondary;
+            }
+        }
+        li.review{
+            &:hover{
+                .quick-dropdown{
+                    opacity: 1;
+                    visibility: visible;
+                    top: 95%;
+                    pointer-events: inherit;
+                    z-index: 99;
+                }
+            }
+        }
+    }
+    .main-navigation{
+        width: 100%;
+        height: auto;
+        @include display(block);
+        @include position(relative);
+        @include transition(0.5s);
+        z-index: 98;
+        padding-top: 30px;
+        ul{
+            padding: 0;
+            width: 100%;
+            @include display(flex,flex-end,'', center);
+            list-style: none; 
+            box-sizing: border-box;
+            margin-bottom: 0;
+            & > li{
+                @include position(relative);
+                padding: 0; 
+                margin-left: 20px;
+                &:first-child{
+                    margin-left: 0;
+                }
+                &:last-child{
+                    ul.sub-menu{
+                        right: 0;
+                        left: auto;
+                    }
+                }
+                &:hover{
+                    ul.sub-menu{
+                        @include display(block);
+                        top: 100%;
+                        pointer-events: all;
+                        z-index: 99;
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+                & > a{
+                    color: $brand-primary;
+                    cursor: pointer;
+                    float: none;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    @include display(inline-block);
+                    padding: 12px 0;
+                    font-family: $font-family-code;
+                }
+                & > ul.sub-menu{
+                    @include position(absolute);
+                    top: 0;
+                    left: 50%;
+                    -webkit-transform: translateX(-50%);
+                    transform: translateX(-50%); 
+                    width: 265px; 
+                    margin: 0; 
+                    padding: 15px; 
+                    box-shadow: 0 2px 3px 0 rgba(0,0,0,.2); 
+                    z-index: 9999; 
+                    border: 1px solid #294474;
+                    border-top-width:4px;
+                    background: $brand-secondary;
+                    pointer-events: none;
+                    opacity: 0;
+                    visibility: hidden;
+                }
+                & > ul.sub-menu{
+                    &:before{
+                        content: "";
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 0 15px 15px 15px;
+                        border-color: transparent transparent #294474 transparent;
+                        @include position(absolute);
+                        top: 0;
+                        left: 50%;
+                        -webkit-transform: translate(-50%, -100%);
+                        transform: translate(-50%, -100%);
+                    }
+                }
+            }
+            & > li.current-menu-ancestor a, & > li.current-menu-item a, & > li.current-menu-parent a, & > li:hover>a{color: $brand-secondary;}
+        }
+
+        /** wide menu */
+        ul.nav_menu{
+            & > li.wide-menu{
+                & > ul.sub-menu{
+                    width: 550px;
+                    @include display(flex, flex-start, wrap);
+                    & > li{
+                        width: 50%;
+                    }
+                }
+            }
+        }
+        ul.sub-menu{
+            ul{
+                padding-left: 20px;
+                @include display(flex,'',wrap);
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+/* Sticky Header */
+header.sticky{
+    background: $white;
+    .header-logo{
+        a{
+            width: 60%;
+        }
+    }
+    .has-sticky-logo{
+        .large-logo{
+            @include display(none);
+        }
+        .sticky-logo{
+            @include display(block);
+        }
+    }
+    .main-navigation {
+        padding-top: 7px;
+    }
+    ul.nav_menu{
+        li{
+            a {
+                padding: 4px 0;
+            }
+        }
+    }
+}
+
+/* Skew Button */
+header.skew-btn{
+    .contact-links{
+        & > li{
+          & > a{
+                @include transform(-20deg);
+                span{
+                    @include transform(20deg);
+                    @include display(block);
+                }
+            }
+        }
+    }
+}

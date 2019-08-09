@@ -1,0 +1,62 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the form component.
+// -----------------------------------------------------------------------------
+
+label {
+	display: block;
+	margin-bottom: 10px;
+	font-size: $font-size-base;
+	line-height: 1.5;
+	font-weight: $label-font-weight;
+	font-size: $label-font-size;
+	color: $label-color;
+}
+
+input,
+textarea,
+button { font-family: $input-font-family; }
+input[type="text"],
+input[type="submit"],
+input[type="button"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+textarea { -webkit-appearance: none; outline: none; }
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+input[type="number"],
+textarea {
+	width: 100%;
+	height: $input-height;
+	padding: 0 15px;
+	color: $input-color;
+	font-size: $input-font-size;
+	font-weight: $input-font-weight;
+	border: 1px solid $input-border-color;
+
+	&:focus {
+		border-color: $input-border-color-focus;
+		outline: none
+	}
+}
+
+textarea {
+	height: $textarea-height-base;
+	padding: 20px 15px;
+	resize: none;
+	overflow: auto;
+}
+
+input[type="search"] { -webkit-appearance: textfield; }
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+
+.form-group {
+	margin-bottom: 30px;
+}

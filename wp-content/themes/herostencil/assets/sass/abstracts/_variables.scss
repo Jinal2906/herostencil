@@ -1,0 +1,67 @@
+// -----------------------------------------------------------------------------
+// Theme variables.
+// -----------------------------------------------------------------------------
+
+/// Regular ( Lato ) font family
+$font-family-base: 'Lato', sans-serif !default;
+
+// Code (Roboto) font family
+$font-family-code: 'Roboto Condensed', sans-serif !default;
+
+//body contect text size
+$font-size-base:   16px !default;
+$font-size-small:  $font-size-base - 2 !default;
+$font-size-large:  $font-size-base + 2 !default;
+
+// Colors
+$brand-primary:   #252869 !default;
+$brand-secondary: #BC3A00 !default;
+
+// Start with assigning color names to specific hex values.
+$white:    #fff !default;
+$black:    #000 !default;
+$darkgray: #404043 !default;
+$lightgray: #ccc !default;
+
+// Heading font family
+$font-size-h1:  40px !default;
+$font-size-h2:  35px !default;
+$font-size-h3:  25px !default;
+$font-size-h4:  22px !default;
+$font-size-h5:  20px !default;
+$font-size-h6:  18px !default;
+
+// Heading Typo
+$headings-margin-bottom: 15px !default;
+$headings-font-family:   inherit !default;
+$headings-font-weight:   700 !default;
+$headings-line-height:   1.3 !default;
+
+// Forms
+$label-color:               $black;
+$label-font-weight:         400;
+$label-font-family:         $font-family-base;
+$label-font-size:           $font-size-small;
+
+$input-bg:                  $white;
+$input-font-family:         $font-family-base;
+$input-font-size:           $font-size-base;
+$input-font-weight:         400;
+$input-color:               $brand-primary;
+$input-color-placeholder:   $brand-secondary;
+$input-height:              45px;
+$input-radius:              0;
+$input-border-color:        $brand-secondary;
+$input-border-color-focus:  $brand-secondary;
+$textarea-height-base:      170px;
+
+//Container's maximum width
+$wrapper-width:  1170px !default;
+
+// media breakpoint
+$phone_small:      480px; //Extra small devices (small phones, less than 480px)
+$phone_portrait:   640px; //Extra small devices (portrait phones, less than 640px)
+$phone_landscape:  767px; //Small devices (landscape phones, less than 767px)
+$tablet_portrait:  $phone_landscape + 1; //(tablets, 768px and up)
+$tablet:           992px; //Medium devices (tablets, 992px and up)
+$desktop:          1200px; //Extra large devices (large desktops, 1200px and up)

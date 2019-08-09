@@ -1,0 +1,62 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+// Responsive media breakpoint
+@mixin breakpoint($size) {
+	@if $size == xs { // Extra small devices (portrait phones, less than 640px)
+		@media ( max-width: $phone_portrait ) { @content; }
+	} @else if $size == sm { // Small devices (landscape phones, less than 767px)
+		@media ( max-width: $phone_landscape ) { @content; }
+	} @else if $size == smlandscape { // iPhone X landscape
+		@media ( min-height: 375px ) and ( max-width: 812px ) and ( orientation: landscape ) { @content; }
+	} @else if $size == md { // Medium devices (tablets, 768px and up)
+		@media ( min-width: $tablet_portrait ) and ( max-width: $tablet - 1 ) { @content; }
+	} @else if $size == lg { // Large devices (desktops, 1024px and up)
+		@media ( min-width: $tablet ) and ( max-width: $desktop) { @content; }
+	} @else if $size == xl { // Extra large devices (large desktops, 1200px and up)
+		@media ( min-width: $desktop+1 ) { @content; }
+	}
+}
+
+// Responsive media grid breakpoint
+@mixin grid-breakpoint($size) {
+	@if $size == xs { // Small devices (landscape phones, less than 640px)
+		@media ( min-width: $phone_portrait+1 ) { @content; }
+	} @else if $size == md { // Medium devices (tablets, less than 767px)
+		@media ( min-width: $tablet_portrait ){ @content; }
+	} @else if $size == lg { // Large devices (desktops, 1024px and up)
+		@media ( min-width: $tablet ) { @content; }
+	} @else if $size == xl { // Extra large devices (large desktops, 1200px and up)
+		@media ( min-width: $desktop ) { @content; }
+	}
+}
+
+//Represent various position
+@mixin position($position:'', $topdirection:'', $rightdirection:'', $bottomdirection:'', $leftdirection:'') {
+    position: 	unquote($position);
+    top: 		unquote($topdirection);
+    right: 		unquote($rightdirection);
+    bottom: 	unquote($bottomdirection);
+    left: 		unquote($leftdirection);
+}
+
+//Represent transition
+@mixin transition($value) {
+    transition: 		$value ease all;
+    -webkit-transition: $value ease all;
+}
+
+//Represent transform
+@mixin transform($value) {
+    transform: 			skewX($value);
+    -webkit-transform: 	skewX($value);
+}
+
+//Represent dislay flex proeprty
+@mixin display($display, $justify-content:'', $flex-wrap:'', $align-items:''){
+	display: 			$display;
+	justify-content: 	unquote($justify-content);
+	flex-wrap: 			unquote($flex-wrap);
+	align-items: 		unquote($align-items);
+}

@@ -1,0 +1,21 @@
+// -----------------------------------------------------------------------------
+// When having several themes, this file contains everything related to the
+// default one.
+// -----------------------------------------------------------------------------
+
+/**
+ * Main content containers
+ */
+.wrapper {
+	width: $wrapper-width;
+	max-width: 100%;
+	margin: 0 auto;
+	box-sizing: border-box;
+    padding: 0 15px;
+}
+#wrapper{
+	width: 100%;
+	flex: 1 0 auto;
+	padding-top: 191px;
+	@include transition(0.5s);
+}

@@ -1,0 +1,25 @@
+.patient_results { margin-left: 0; padding: 0; display: flex; flex-wrap: wrap;list-style: none; }
+.patient_results li { padding: 25px 0; border-top: 1px dashed #252869; margin-left: 0; width: 100%; }
+.patient_results li:first-child { border: none; margin-top: 0;}
+.patient_results li h6 { color: #444 }
+.patient_results li p { margin-bottom: 25px; margin-top: 0 }
+.patient_results li em { font-size: 13px; color: #333; font-weight: 600 }
+.patient_results li img { margin-right: 30px; float: left }
+.patient_results li .result-detail { padding-left: 91px; padding-top: 20px; width: 100%; box-sizing: border-box; position: relative; display: flex;  flex-wrap: wrap; align-items: flex-start; }
+.patient_results li .result-detail:before {content:  "“";; display: block; position: absolute; color: #252869; font-size: 150px; top: 57px; left: 0px; font-family: Lato, sans-serif;line-height: 0;}
+.patient_results li .testimonials-thumb {width: 150px; margin-right: 20px;}
+.patient_results li .testimonials-thumb.testimonials-video{width: 400px;}
+.patient_results li .testimonials-content {flex: 1 0 0%;}
+.result-detail h5 { color: #252869; position: relative; padding-left: 24px; margin-bottom: 0; padding-bottom: 0 }
+.result-detail h5:before { width: 20px; height: 2px; background: #252869; position: absolute; left: 0; top: 12px; margin-top: -1px; content: "" }
+
+
+
+/*---------------Responsive Css------------*/
+@media (max-width:767px) {
+	.patient_results li .result-detail{padding-left: 60px;}
+}
+@media (max-width:480px) {
+	.patient_results li .testimonials-thumb{margin:0 0 20px;}
+	.patient_results li .testimonials-content{flex: 1 0 100%;}
+}

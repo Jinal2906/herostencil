@@ -1,0 +1,22 @@
+.block-section{display: flex;flex-wrap: wrap;width: calc(100% + 20px); margin-left: -10px;} 
+.contatblock{ width: calc(50% - 20px);font-size: 18px; line-height: 1.5; color: #000; margin: 10px 10px 20px;}
+.contatblock h5{font-size: 22px;line-height: 1.2;}
+.contatblock p, .contatblock span, .contatblock a{font-size: 18px; line-height: 1.5; color:#000;margin:0;}
+.contatblock a:hover{color:#BC3A00;}
+.block-section .location-map{height: 300px;margin-bottom: 20px;border: 1px solid #252869;}
+.contatblock .wrk-hours{margin-top: 20px;}
+.contatblock .wrk-hours h5{margin-bottom: 10px;}
+
+
+
+/*---------------Responsive Css------------*/
+@media (max-width:992px) {
+	.contatblock{width: 100%;}
+}
+@media (max-width:767px) {
+	.contatblock, .contatblock p, .contatblock span, .contatblock a{font-size: 16px;}
+	.contatblock h5{font-size: 18px;}
+}
+@media (max-width:580px) {
+    .nf-form-cont .one-third {width: 100% !important;margin: 0 !important;margin-bottom: 15px !important;}
+}

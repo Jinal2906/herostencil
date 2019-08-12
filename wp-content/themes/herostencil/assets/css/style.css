@@ -2,6 +2,349 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700');
 @import 'vendors/general';
 /* Theme fonts goes here */
+/*
+ @mixin grid-breakpoint($size) {
+ @if $size == xs { // Small devices (landscape phones, less than 640px)
+ @media ( min-width: $phone_portrait+1 ) { @content; }
+ } @else if $size == md { // Medium devices (tablets, less than 767px)
+ @media ( min-width: $tablet_portrait ){ @content; }
+ } @else if $size == lg { // Large devices (desktops, 1024px and up)
+ @media ( min-width: $tablet ) { @content; }
+ } @else if $size == xl { // Extra large devices (large desktops, 1200px and up)
+ @media ( min-width: $desktop ) { @content; }
+ }
+ }
+ */
+/**
+ * Main content containers
+ */
+.container {
+  width: 100%;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.container-fluid {
+  width: 100%;
+  margin: auto;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+/* row and column */
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -20px;
+  margin-left: -20px;
+}
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+.row.no-gutters > [class*="cell-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+[class*="cell-"] {
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  width: 100%;
+}
+/* align item */
+.d-flex {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.d-flex-inline {
+  display: inline-flex;
+}
+.d-flex img {
+  align-self: center;
+}
+.flex-nowrap {
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+.align-items-center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.align-content-center {
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+.align-items-end {
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+.justify-content-center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.justify-content-end {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+.justify-content-between {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.justify-content-around {
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+/* column structure */
+.cell-1 {
+  width: 8.3333333333%;
+}
+.cell-2 {
+  width: 16.6666666667%;
+}
+.cell-3 {
+  width: 25%;
+}
+.cell-4 {
+  width: 33.3333333333%;
+}
+.cell-5 {
+  width: 41.6666666667%;
+}
+.cell-6 {
+  width: 50%;
+}
+.cell-7 {
+  width: 58.3333333333%;
+}
+.cell-8 {
+  width: 66.6666666667%;
+}
+.cell-9 {
+  width: 75%;
+}
+.cell-10 {
+  width: 83.3333333333%;
+}
+.cell-11 {
+  width: 91.6666666667%;
+}
+.cell-12 {
+  width: 100%;
+}
+.mt-0, .m-0, .my-0 {
+  margin-top: 0px;
+}
+.pt-0, .p-0, .py-0 {
+  padding-top: 0px;
+}
+.mb-0, .m-0, .my-0 {
+  margin-bottom: 0px;
+}
+.pb-0, .p-0, .py-0 {
+  padding-bottom: 0px;
+}
+.ml-0, .m-0, .mx-0 {
+  margin-left: 0px;
+}
+.pl-0, .p-0, .px-0 {
+  padding-left: 0px;
+}
+.mr-0, .m-0, .mx-0 {
+  margin-right: 0px;
+}
+.pr-0, .p-0, .px-0 {
+  padding-right: 0px;
+}
+.mt-20, .m-20, .my-20 {
+  margin-top: 20px;
+}
+.pt-20, .p-20, .py-20 {
+  padding-top: 20px;
+}
+.mb-20, .m-20, .my-20 {
+  margin-bottom: 20px;
+}
+.pb-20, .p-20, .py-20 {
+  padding-bottom: 20px;
+}
+.ml-20, .m-20, .mx-20 {
+  margin-left: 20px;
+}
+.pl-20, .p-20, .px-20 {
+  padding-left: 20px;
+}
+.mr-20, .m-20, .mx-20 {
+  margin-right: 20px;
+}
+.pr-20, .p-20, .px-20 {
+  padding-right: 20px;
+}
+.mt-30, .m-30, .my-30 {
+  margin-top: 30px;
+}
+.pt-30, .p-30, .py-30 {
+  padding-top: 30px;
+}
+.mb-30, .m-30, .my-30 {
+  margin-bottom: 30px;
+}
+.pb-30, .p-30, .py-30 {
+  padding-bottom: 30px;
+}
+.ml-30, .m-30, .mx-30 {
+  margin-left: 30px;
+}
+.pl-30, .p-30, .px-30 {
+  padding-left: 30px;
+}
+.mr-30, .m-30, .mx-30 {
+  margin-right: 30px;
+}
+.pr-30, .p-30, .px-30 {
+  padding-right: 30px;
+}
+.mt-40, .m-40, .my-40 {
+  margin-top: 40px;
+}
+.pt-40, .p-40, .py-40 {
+  padding-top: 40px;
+}
+.mb-40, .m-40, .my-40 {
+  margin-bottom: 40px;
+}
+.pb-40, .p-40, .py-40 {
+  padding-bottom: 40px;
+}
+.ml-40, .m-40, .mx-40 {
+  margin-left: 40px;
+}
+.pl-40, .p-40, .px-40 {
+  padding-left: 40px;
+}
+.mr-40, .m-40, .mx-40 {
+  margin-right: 40px;
+}
+.pr-40, .p-40, .px-40 {
+  padding-right: 40px;
+}
+.mt-50, .m-50, .my-50 {
+  margin-top: 50px;
+}
+.pt-50, .p-50, .py-50 {
+  padding-top: 50px;
+}
+.mb-50, .m-50, .my-50 {
+  margin-bottom: 50px;
+}
+.pb-50, .p-50, .py-50 {
+  padding-bottom: 50px;
+}
+.ml-50, .m-50, .mx-50 {
+  margin-left: 50px;
+}
+.pl-50, .p-50, .px-50 {
+  padding-left: 50px;
+}
+.mr-50, .m-50, .mx-50 {
+  margin-right: 50px;
+}
+.pr-50, .p-50, .px-50 {
+  padding-right: 50px;
+}
+.cell-none {
+  display: none;
+}
+.cell-block {
+  display: block;
+}
+/*
+ @each $bp-key, $bp in $breakpoints {
+ @include respond-above($bp-key) {
+ @for $i from 1 through $grid-columns {
+ .cell-#{$bp-key}-#{$i} {
+ width: percentage($i / $grid-columns);
+ }
+ }
+ @each $space in $spaceamounts {
+ @each $side in $sidesY {
+ // margin
+ .m#{str-slice($side, 0, 1)}-#{$bp-key}-#{$space},
+ .m-#{$space},
+ .my-#{$bp-key}-#{$space} {
+ margin-#{$side}: #{$space}px;
+ }
+ // padding
+ .p#{str-slice($side, 0, 1)}-#{$bp-key}-#{$space},
+ .p-#{$space},
+ .py-#{$bp-key}-#{$space} {
+ padding-#{$side}: #{$space}px;
+ }
+ }
+ @each $side in $sidesX {
+ // margin
+ .m#{str-slice($side, 0, 1)}-#{$bp-key}-#{$space},
+ .m-#{$space},
+ .mx-#{$bp-key}-#{$space} {
+ margin-#{$side}: #{$space}px;
+ }
+ // padding
+ .p#{str-slice($side, 0, 1)}-#{$bp-key}-#{$space},
+ .p-#{$space},
+ .px-#{$bp-key}-#{$space} {
+ padding-#{$side}: #{$space}px;
+ }
+ }
+ }
+ .cell-#{$bp-key}-none {
+ display: none;
+ }
+ .cell-#{$bp-key}-block {
+ display: block;
+ }
+ }
+ }
+ */
+/* text alignment */
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+.text-justify {
+  text-align: justify;
+}
+/* wordpress align class */
+.alignnone {
+  float: none;
+  margin: 20px 0;
+}
+.aligncenter {
+  display: block;
+  clear: both;
+  margin: 20px auto;
+}
+.alignleft {
+  float: left;
+  margin: 0 20px 20px 0;
+}
+.alignright {
+  float: right;
+  margin: 0 0 20px 20px;
+}
 /**
  * Basic typography style for copy text
  */
@@ -593,43 +936,6 @@ header.skew-btn .contact-links > li > a span {
   height: auto;
   background: #bc3a00;
   line-height: normal;
-}
-/*--- Welcome info Blocks ---*/
-.welcome-informatics {
-  width: 100%;
-  height: auto;
-  display: block;
-  position: relative;
-  top: 0;
-  right: auto;
-  bottom: auto;
-  left: 0;
-  margin-top: -150px;
-  z-index: 1;
-}
-.welcome-informatics .wrapper {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  text-align: center;
-  position: relative;
-  top: 0;
-  right: auto;
-  bottom: auto;
-  left: 0;
-}
-@media (max-width: 767px) {
-}
-@media (max-width: 640px) {
-}
-@media (min-height: 375px) and (max-width: 812px) and (orientation: landscape) {
-}
-@media (min-width: 768px) and (max-width: 991px) {
-}
-@media (min-width: 992px) and (max-width: 1200px) {
-}
-@media (min-width: 1201px) {
 }
 /**
  * Main content containers

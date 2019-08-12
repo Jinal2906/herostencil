@@ -16,32 +16,20 @@ if ( has_post_thumbnail() ){
         $contentBanner = 'true';
     }
 }
-?>
 
-<!--cotent start-->
-<div class="content">
-   <?php
+echo '<div class="content">' ;
         if ( function_exists('yoast_breadcrumb') ) {
           yoast_breadcrumb( '<div id="breadcrumbs" class="breadcrumbs"><div class="wrapper"><div class="inner-bc">','</div></div></div>' );
         } 
-    ?>
-    <div class="wrapper">
-        <div class="mid <?php  echo ( function_exists('yoast_breadcrumb') ? ' no-left-radius' : '' ); ?> ">
-
-            <div class="post entry" id="post-<?php the_ID(); ?>">
-               
-                <?php
-                   echo (
+        echo '<div class="wrapper">' .
+            '<div class="mid ' . ( function_exists('yoast_breadcrumb') ? ' no-left-radius' : '' ) . ' ">' .
+                '<div class="post entry" id="post-' . get_the_ID() .'">' .
+                   (
                         $contentBanner == 'true'
                         ? '<div class="content-banner ' . $contentBanner . ' ">' . get_the_post_thumbnail() . '</div>'
                         : ''
                     );
-                ?>
-               
-                <h1><?php the_title(); ?></h1>
-                <?php // wp_list_pages(); ?>
-                
-                <?php
+                    '<h1>' . get_the_title() . '</h1>' ;
                     $args =  array(
                         'child_of' => 4152,
                         'sort_column' => 'post_date',
@@ -50,14 +38,11 @@ if ( has_post_thumbnail() ){
                          'title_li' => '',
                         );
                     wp_list_pages( $args );
-                ?>
-            </div>
-
-            <?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
-        </div>
-        <?php get_sidebar(); ?>
-    </div>
-</div>
-
-<!--content end-->
-<?php get_footer(); ?>
+                echo '</div>' ;
+            edit_post_link('Edit this entry.', '<p>', '</p>');
+            echo '</div>' ;
+            get_sidebar();
+        echo '</div>' .
+'</div>' ;
+get_footer(); 
+?>

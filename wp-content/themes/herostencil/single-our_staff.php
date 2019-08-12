@@ -11,25 +11,25 @@ if ( has_post_thumbnail('4142') ){
         $contentBanner = 'true';
     }
 }
-?>
-<?php while ( have_posts() ) : the_post(); ?>
-<div class="content">
-    <?php if ( function_exists('yoast_breadcrumb') ) {
-    yoast_breadcrumb( '<div id="breadcrumbs" class="breadcrumbs"><div class="wrapper"><div class="inner-bc">','</div></div></div>' );
-    } ?>
-    <div class="wrapper">
-        <div class="mid <?php  echo ( function_exists('yoast_breadcrumb') ? ' no-left-radius' : '' ); ?>">
-            <?php
-                if ( get_the_title('4142') ) {
-                echo '<h1>';
-                    echo get_the_title('4142') .
-                '</h1>';
-                }
-            ?>
-            <div class="staff-single">
-                <div class="staff-left">
-                    <?php
-                    echo (
+while ( have_posts() ) : the_post();
+echo
+'<div class="content">' ;
+    if ( function_exists('yoast_breadcrumb') ) {
+        yoast_breadcrumb( '<div id="breadcrumbs" class="breadcrumbs"><div class="wrapper"><div class="inner-bc">','</div></div></div>' );
+    } 
+    echo
+    '<div class="wrapper">' .
+        '<div class="mid ' . ( function_exists('yoast_breadcrumb') ? ' no-left-radius' : '' ) . ' ">' ;
+            $postObj = get_post_type_object( get_post_type() );
+            if ($postObj) {
+                $rewriteSlug = $postObj->rewrite['slug'];
+                $pageObj = get_page_by_path( $rewriteSlug );
+                echo '<h1>'. $pageObj->post_title .'</h1>';
+            }
+            echo 
+            '<div class="staff-single">' .
+                '<div class="staff-left">' .
+                    (
                         has_post_thumbnail(get_the_ID())
                         ? get_the_post_thumbnail(get_the_ID(), 'staff-thumb', array( 'class' => '' ) )
                         : '<img src="' . get_template_directory_uri() .'/images/defaultUser.jpg" alt="Staff Image">'
@@ -40,19 +40,25 @@ if ( has_post_thumbnail('4142') ){
                                 echo  '<img src="' . get_sub_field('certifications_image')['url'] . '" alt="' . get_sub_field('certifications_image')['alt'] . '" />';
                             endwhile; wp_reset_query();
                         echo '</div>';
-                    } ?>
-                </div>
-                <div class="staff-right">
-                    <h3>
-                        <?php the_title(); ?>
-                        <?php $sdesi = get_field('staff_designation');
-                        if($sdesi){ ?>, <span><?php the_field('staff_designation'); ?></span><?php }?>
-                    </h3>
-                    <?php the_content(); ?>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<?php endwhile; ?>
-<?php get_footer(); ?>
+                    } 
+                echo '</div>' .
+                '<div class="staff-right">' .
+                    '<h3>' .
+                        get_the_title() ;
+                        $sdesi = get_field('staff_designation');
+                        echo
+                        (
+                            $sdesi
+                            ? '<span>' . get_field('staff_designation') .'</span>'
+                            :''
+                        ) .
+                    '</h3>' .
+                    get_the_content() .
+                '</div>' .
+            '</div>' .
+        '</div>' .
+    '</div>' .
+'</div>' ;
+endwhile;
+get_footer(); 
+?>

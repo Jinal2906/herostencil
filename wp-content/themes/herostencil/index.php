@@ -41,13 +41,6 @@ echo '<div class="content">';
     if ( function_exists('yoast_breadcrumb') ) {
           yoast_breadcrumb( '<div id="breadcrumbs" class="breadcrumbs"><div class="wrapper"><div class="inner-bc">','</div></div></div>' );
         } 
-   /*    $args =  array(
-            'orderby'          => 'post_date',
-            'order'            => 'ASC', 
-            'post_type'        => 'post', 
-            'post_status'      => array('publish','future'),
-             );
-        $loop1 = new WP_Query( $args );*/
         echo '<div class="wrapper">' .
             '<div class="mid blog-listing ' . ( function_exists('yoast_breadcrumb') ? ' no-left-radius' : '' ) . ' ">';
                 if (have_posts()) : 
@@ -82,17 +75,14 @@ echo '<div class="content">';
                     echo '<p class="center">Sorry, but you are looking for something that isnt here.</p>';
                     get_search_form();
                 endif; 
-            echo '</div>' ;
-            
-                
+            echo '</div>' ;             
             if ( is_active_sidebar( 'posts_widgets' ) ) :
                 echo '<div id="sidebar"  class="sidebar">' .
                     '<ul>';
                             dynamic_sidebar( 'posts_widgets' ); 
                     echo '</ul>' .
                  '</div>';
-            endif;
-                
+            endif;           
         echo '</div>' .
 '</div>';
 

@@ -26,17 +26,9 @@
 	'components/header',
 	'components/footer';
 
-// Homepage Parts
-@import
-	'parts/welcome',
-    'parts/testimonial',
-    'parts/service',
-    'parts/appointment',
-    'parts/blog';
-
 // Page-specific styles
 @import
-	'pages/home',
-	'pages/default'; 
+//	'pages/home',
+	'pages/default';
 
 //global style code goes here

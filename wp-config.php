@@ -19,6 +19,9 @@ define( 'WP_CACHE', false );
  * @package WordPress
  */
 
+define( 'WP_HOME', 'http://siteproofs.com/projects/neil/herostencil' );
+define( 'WP_SITEURL', 'http://siteproofs.com/projects/neil/herostencil' );
+
 // ** MySQL settings ** //
 /** The name of the database for WordPress */
 define( 'DB_NAME', "sass-herostencil" );

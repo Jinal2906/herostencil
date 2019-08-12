@@ -18,42 +18,33 @@ if ( has_post_thumbnail() ){
     }
 }
 
+echo '<div class="content">' .
+    '<div class="wrapper">' .
+        '<div class="mid">' .
+            '<div class="post">' .
+                '<h1>' . get_the_title() . '</h1>' .
+                (
+                    $contentBanner == 'true'
+                    ? '<div class="content-banner ' . $contentBanner . ' ">' . get_the_post_thumbnail() . '</div>'
+                    : ''
+                ) .
+                get_the_content() .
+                '<ul class="faq_section">';
+                    wp_reset_query();
+                    $paged= (get_query_var('paged')) ? get_query_var('paged') : 1;
+                    $args = array( 'post_type' => 'faq', 'posts_per_page' => -1, 'order' => 'asc', 'orderby' => 'menu_order', 'paged' => $paged );
+                    $wp_query = new WP_Query($args);
+                    while ( $wp_query->have_posts() ) : $wp_query->the_post();
+                    echo '<li>' .
+                        '<h6><a href="'. get_the_permalink() .'">' . get_the_title() .'</a></h6>' .
+                        '<div class="faq_content">' . get_the_Content() . '</div>' .
+                    '</li>';
+                    endwhile;
+                    wp_reset_query();
+                echo '</ul>' .
+			'</div>' .
+		'</div>' .
+    '</div>'.
+'</div>';
+get_footer(); 
 ?>
-<!--content start-->
-<div class="content cf">
-    <div class="wrapper">
-        <div class="mid">
-        	
-            <div class="post cf">
-                <h1><?php the_title(); ?></h1>
-                <?php
-                    echo (
-                        $contentBanner == 'true'
-                        ? '<div class="content-banner ' . $contentBanner . ' ">' . get_the_post_thumbnail() . '</div>'
-                        : ''
-                    );
-                ?>
-                <?php the_content(); ?>
-                <ul class="faq_section">
-                <?php wp_reset_query(); ?> 
-                <?php $paged= (get_query_var('paged')) ? get_query_var('paged') : 1;
-                $args = array( 'post_type' => 'faq', 'posts_per_page' => -1, 'order' => 'asc', 'orderby' => 'menu_order', 'paged' => $paged );
-                $wp_query = new WP_Query($args);
-                // The Loop
-                while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
-                <li>
-                    <h6><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h6>
-                    <div class="faq_content">
-                        <?php the_content(); ?>
-                    </div>
-                </li>
-                <?php endwhile; ?>
-                <?php wp_reset_query(); ?> 
-                </ul>
-			</div>
-		</div>  
-        <?php //get_sidebar(); ?>
-    </div>
-</div>
-<!--content end-->
-<?php get_footer(); ?>

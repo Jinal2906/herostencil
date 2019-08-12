@@ -22,48 +22,44 @@ if ( has_post_thumbnail($page->ID) ){
         $contentBanner = 'true';
     }
 }
-
-?>
-
-<!-- content start -->
-<div class="content">
- <?php if ( function_exists('yoast_breadcrumb') ) {
-    yoast_breadcrumb( '<div id="breadcrumbs" class="breadcrumbs"><div class="wrapper"><div class="inner-bc">','</div></div></div>' );
-} ?>
-<div class="wrapper">
-    <div class="mid">
-        <div class="post workshop-details">
-            <?php while ( have_posts() ) : the_post(); ?>
-                <h1><?php the_title(); ?></h1>
-                <?php the_post_thumbnail(); ?>
-                <br>
-
-                <?php the_content(); ?>
-                <?php if(get_field('date') || get_field('time') || get_field('location')) { ?>
-                    <div class="workshop-contact">
-                        <span><strong>Date:</strong>
-                            <?php
+echo
+'<div class="content">' ;
+    if ( function_exists('yoast_breadcrumb') ) {
+        yoast_breadcrumb( '<div id="breadcrumbs" class="breadcrumbs"><div class="wrapper"><div class="inner-bc">','</div></div></div>' );
+    } 
+    echo 
+    '<div class="wrapper">' .
+        '<div class="mid">' .
+            '<div class="post workshop-details">' ;
+                while ( have_posts() ) : the_post();
+                echo '<h1>' . get_the_title() .'</h1>';
+                the_post_thumbnail();
+                '<br>' .
+                get_the_content();
+                if(get_field('date') || get_field('time') || get_field('location')) { 
+                    echo '<div class="workshop-contact">' .
+                            '<span><strong>Date:</strong>' ;
                             $date = get_field('date', false, false);
                             $date = new DateTime($date);
-                            ?>
-                            <?php echo $date->format('j M Y'); ?>
-                        </span>
-                        <span><strong>Time:</strong> <?php the_field('time'); ?></span>
-                        <span><strong>Address:</strong> <?php echo get_field('location'); ?></span>
-                    </div>
-                <?php } ?>
-                <?php if(get_field('workshop_form')) { ?>
-                    <a data-fancybox="workshop_content" data-auto-focus="false" data-src="#workshop_content" href="javascript:;" class="read-more"> Register </a>
-                <?php } ?>
-
-                <div id="workshop_content" class="workshop-form" style="display:none;width:100%;max-width:660px;">
-                    <h3>RESERVE YOUR SPOT NOW</h3>
-                    <?php echo do_shortcode(get_field('workshop_form')); ?>
-                </div>
-            <?php endwhile; ?>
-        </div><!-- #container -->
-    </div>
-    <?php get_sidebar(); ?>
-</div>
-</div><!-- #main-content -->
-<?php get_footer(); ?>
+                            echo $date->format('j M Y') .
+                            '</span>' .
+                            '<span><strong>Time:</strong>' . get_field('time') . '</span>' .
+                            '<span><strong>Address:</strong>' . get_field('location') . '</span>' .
+                    '</div>' ;
+                } 
+                if(get_field('workshop_form')) {
+                    echo '<a data-fancybox="workshop_content" data-auto-focus="false" data-src="#workshop_content" href="javascript:;" class="read-more"><span>Register</span></a>' ;
+                }
+                echo
+                '<div id="workshop_content" class="workshop-form" style="display:none;width:100%;max-width:660px;">' .
+                    '<h3>RESERVE YOUR SPOT NOW</h3>' .
+                    do_shortcode(get_field('workshop_form')) .
+                '</div>' ;
+                endwhile;
+            echo '</div>' .
+        '</div>' ;
+        get_sidebar();
+    echo '</div>' .
+'</div>' ;
+get_footer(); 
+?>

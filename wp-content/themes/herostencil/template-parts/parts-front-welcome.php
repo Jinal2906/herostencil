@@ -1,5 +1,5 @@
 <?php
-wp_enqueue_style( 'parts-front-welcome' );
+wp_enqueue_style( 'front-welcome' );
 
 $welcomeInfo = get_field('welcome_informatics');
 

@@ -20,56 +20,44 @@ if ( has_post_thumbnail() ){
         $contentBanner = 'true';
     }
 }
-
-
-?>
-    <!--content start-->
-    <div class="content">
-        <div class="wrapper">
-            <div class="mid">
-                <?php the_content(); ?>
-                <div class="page-content">
-                    <div class="container">
-                        <?php
-                        while ( have_posts() ) : the_post(); ?>
-                            <h1><?php the_title(); ?></h1>
-                            <?php
-                            echo (
+echo '<div class="content">' .
+        '<div class="wrapper">' .
+            '<div class="mid">' .
+                get_the_content() .
+                '<div class="page-content">' .
+                    '<div class="container">' ;
+                        while ( have_posts() ) : the_post();
+                            echo '<h1>' . get_the_title() . '</h1>' .
+                            (
                                 $contentBanner == 'true'
                                 ? '<div class="content-banner ' . $contentBanner . ' ">' . get_the_post_thumbnail() . '</div>'
                                 : ''
-                            );
-                            ?>
-                                <ul class="patient_results">
-                                    <?php //wp_reset_query();
-                                    $cp2 = get_the_id();
-                                    $args = array( 'post_type' => 'testimonial', 'posts_per_page' => -1,'orderby' => 'DESC');
-                                    $wp_query = new WP_Query($args);
-                        // The Loop
-                                    while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
-                                        <li>
-
-                                            <div class="result-detail">
-                                                <?php echo  (   has_post_thumbnail() 
-                                                    ? '<div class="testimonials-thumb">' . get_the_post_thumbnail() . '</div>'
-                                                    : ''
-                                                ) ; ?>
-                                                <div class="testimonials-content">
-                                                    <?php the_content(); ?>
-                                                    <h5><i><?php the_title();?></i></h5>
-                                                    <p><strong><?php echo get_post_meta( get_the_ID(), '_cite', true );  ?></strong></p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    <?php endwhile; ?>
-                                    <?php wp_reset_query(); ?>
-                                </ul>
-                                <!-- .page-sidebar -->
-                            <?php endwhile; ?>
-                        </div><!-- .container -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--content end-->
-        <?php get_footer(); ?>
+                            ) .
+                            '<ul class="patient_results">';
+                                $cp2 = get_the_id();
+                                $args = array( 'post_type' => 'testimonial', 'posts_per_page' => -1,'orderby' => 'DESC');
+                                $wp_query = new WP_Query($args);
+                                while ( $wp_query->have_posts() ) : $wp_query->the_post();
+                                    echo '<li>' .
+                                        '<div class="result-detail">' .
+                                            (   has_post_thumbnail() 
+                                                ? '<div class="testimonials-thumb">' . get_the_post_thumbnail() . '</div>'
+                                                : ''
+                                            ) .
+                                            '<div class="testimonials-content">' .
+                                                get_the_content() .
+                                                '<h5><i>' . get_the_title() . '</i></h5>' .
+                                            '</div>' .
+                                        '</div>' .
+                                    '</li>' ;
+                                endwhile;
+                                wp_reset_query();
+                            echo '</ul>' ;
+                        endwhile; 
+                    echo '</div>' .
+                '</div>' .
+            '</div>' .
+        '</div>' .
+'</div>' ;
+get_footer(); 
+?>

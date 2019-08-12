@@ -586,7 +586,7 @@ function action__init() {
 
     /* Parts for Welcome */
     wp_register_style( 'parts-front-banner', get_stylesheet_directory_uri() . '/css/parts/parts-front-banner.css', array( 'twentynineteen-style' ), 'init' );
-    wp_register_style( 'parts-front-welcome', get_stylesheet_directory_uri() . '/css/parts/parts-front-welcome.css', array( 'twentynineteen-style' ), 'init' );
+    wp_register_style( 'front-welcome', get_stylesheet_directory_uri() . '/assets/css/front-welcome.css', array( 'twentynineteen-style' ), 'init' );
     wp_register_style( 'parts-front-feature-testimonials', get_stylesheet_directory_uri() . '/css/parts/parts-front-feature-testimonials.css', array( 'twentynineteen-style' ), 'init' );
     wp_register_style( 'parts-front-services', get_stylesheet_directory_uri() . '/css/parts/parts-front-services.css', array( 'twentynineteen-style' ), 'init' );
     wp_register_style( 'parts-front-testimonials', get_stylesheet_directory_uri() . '/css/parts/parts-front-testimonials.css', array( 'twentynineteen-style' ), 'init' );
@@ -608,7 +608,7 @@ function action__init() {
     wp_register_style( 'content-servicessources', get_stylesheet_directory_uri() . '/css/parts/content-servicessources.css', array( 'twentynineteen-style' ), 'init' );
     wp_register_style( 'content-accordion-block', get_stylesheet_directory_uri() . '/css/parts/content-accordion-block.css', array( 'twentynineteen-style' ), 'init' );
     wp_register_style( 'page-pt-wired-app', get_stylesheet_directory_uri() . '/css/parts/page-pt-wired-app.css', array( 'twentynineteen-style' ), 'init' );
-    
+
     wp_enqueue_style( 'sass-style', get_stylesheet_directory_uri() . '/assets/css/style.css', array( 'twentynineteen-style' ), 'init' );
 
     /* scripts */
@@ -1561,9 +1561,9 @@ function my_register_merge_tags(){
 /*
 class My_MergeTags extends NF_Abstracts_MergeTags
 {
-  
+
    // The $id property should match the array key where the class is registered.
-   
+
   protected $id = 'my_merge_tags';
 
   public function __construct()
@@ -1573,7 +1573,7 @@ class My_MergeTags extends NF_Abstracts_MergeTags
     /* Translatable display name for the group.
     $this->title = __( 'My Merge Tags', 'ninja-forms' );
 
-    /* Individual tag registration. 
+    /* Individual tag registration.
     $this->merge_tags = array(
 
         'foo' => array(
@@ -1584,10 +1584,10 @@ class My_MergeTags extends NF_Abstracts_MergeTags
       ),
     );
 
-    
+
     // Use the `init` and `admin_init` hooks for any necessary data setup that relies on WordPress.
     // See: https://codex.wordpress.org/Plugin_API/Action_Reference
-    
+
     add_action( 'init', array( $this, 'init' ) );
     add_action( 'admin_init', array( $this, 'admin_init' ) );
   }
@@ -1595,10 +1595,10 @@ class My_MergeTags extends NF_Abstracts_MergeTags
   // public function init(){ /* This section intentionally left blank. }
   // public function admin_init(){ /* This section intentionally left blank.}
 
-  
+
   // The callback method for the {my:foo} merge tag.
   // @return string
-  
+
   public function foo()
   {
     // Do stuff here.

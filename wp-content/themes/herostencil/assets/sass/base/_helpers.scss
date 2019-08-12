@@ -165,9 +165,9 @@ $sidesX: (left, right);
 	display: none;
 }
 
-.cell-block {
+.cell-block { 
 	display: block;
-} 
+}
 /*
 @each $bp-key, $bp in $breakpoints {
 		@include respond-above($bp-key) {

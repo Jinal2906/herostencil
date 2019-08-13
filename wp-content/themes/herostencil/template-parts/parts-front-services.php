@@ -1,6 +1,6 @@
 <?php
 
-wp_enqueue_style( 'parts-front-services' );
+wp_enqueue_style( 'front-service' );
 $ServicesGroup = get_field('services');
 $ServicesSecTitle = $ServicesGroup['services_title'];
 $ServicesSecDesc = $ServicesGroup['services_subtitle'];

@@ -17,56 +17,55 @@ header {
     background: $white;
     width: 100%;
     height: auto;
-    @include display(block);
-    @include position(fixed, 0, auto, auto, 0);
+    //@include display(block);
+    //@include position(fixed, 0, auto, auto, 0);
     padding: 15px 0;
     z-index: 999;
-    @include transition(0.5s);
+    //@include transition(0.5s);
     box-sizing: border-box;
     .wrapper{
-        @include display(flex, space-between, wrap, center);
+        //@include display(flex, space-between, wrap, center);
     }
 
     /* Header Logo */
     .header-logo{
         width: 220px;
         height: auto;
-        @include display(block);
-        @include position(relative);
-        margin-right: 20px;
+        //@include display(block);
+        //@include position(relative);
         a{
-            @include position(relative);
-            width: 100%;
-            height: auto;
-            @include display(block);
-            @include transition(0.5s);
+            //@include position(relative);
+            //width: 100%;
+            //height: auto;
+            //@include display(block);
+            //@include transition(0.5s);
         }
         img{
-            @include transition(0.5s);
+            //@include transition(0.5s);
         }
     }
     .sticky-logo, .small-logo{
-        @include display(none);
+        //@include display(none);
     }
 
     /* Header right navigation */
     .header-navigation{
         flex: 1 0 0%;
-        @include display(flex,flex-end,wrap);
+        //@include display(flex,flex-end,wrap);
     }
     .quick-links{
-        width: 100%; 
+        width: 100%;
         height: auto;
-        @include display(block);
-        @include position(relative);
+        //@include display(block);
+        //@include position(relative);
     }
     .contact-links{
         margin: 0;
         padding: 0;
         list-style: none;
-        @include display(flex,flex-end,wrap);
+        //@include display(flex,flex-end,wrap);
         li{
-            @include position(relative);
+            //@include position(relative);
             margin: 0;
             margin-left: 15px;
             padding:0;
@@ -78,17 +77,17 @@ header {
                 text-transform: uppercase;
                 color: $white;
                 font-weight: 700;
-                @include transition(0.5s);
-                @include display(block);
+                //@include transition(0.5s);
+                //@include display(block);
                 background: $brand-primary;
                 padding: 12px 20px;
-                @include position(relative);
+                //@include position(relative);
             }
             .quick-dropdown{
                 min-width: 100%;
                 margin: 0;
                 padding: 0;
-                @include position(absolute, 50%, auto, auto, 0); 
+                //@include position(absolute, 50%, auto, auto, 0);
                 opacity: 0;
                 visibility: hidden;
                 pointer-events: none;
@@ -111,7 +110,7 @@ header {
                         font-size: 80%;
                         color: $white;
                         font-family: 'Roboto Condensed', sans-serif;
-                        @include display(block);
+                        //@include display(block);
                         border-radius:0;
                     }
                 }
@@ -122,7 +121,7 @@ header {
                 pointer-events: none;
             }
             .call-icon{
-                @include display(none);
+                //@include display(none);
             }
             &:hover{
                 .quick-dropdown{
@@ -154,21 +153,21 @@ header {
     .main-navigation{
         width: 100%;
         height: auto;
-        @include display(block);
-        @include position(relative);
-        @include transition(0.5s);
+        //@include display(block);
+        //@include position(relative);
+        //@include transition(0.5s);
         z-index: 98;
         padding-top: 30px;
         ul{
             padding: 0;
             width: 100%;
-            @include display(flex,flex-end,'', center);
-            list-style: none; 
+            //@include display(flex,flex-end,'', center);
+            list-style: none;
             box-sizing: border-box;
             margin-bottom: 0;
             & > li{
-                @include position(relative);
-                padding: 0; 
+                //@include position(relative);
+                padding: 0;
                 margin-left: 20px;
                 &:first-child{
                     margin-left: 0;
@@ -181,7 +180,7 @@ header {
                 }
                 &:hover{
                     ul.sub-menu{
-                        @include display(block);
+                        //@include display(block);
                         top: 100%;
                         pointer-events: all;
                         z-index: 99;
@@ -196,21 +195,21 @@ header {
                     font-size: 14px;
                     text-transform: uppercase;
                     font-weight: 700;
-                    @include display(inline-block);
+                    //@include display(inline-block);
                     padding: 12px 0;
                     font-family: $font-family-code;
                 }
                 & > ul.sub-menu{
-                    @include position(absolute);
+                    //@include position(absolute);
                     top: 0;
                     left: 50%;
                     -webkit-transform: translateX(-50%);
-                    transform: translateX(-50%); 
-                    width: 265px; 
-                    margin: 0; 
-                    padding: 15px; 
-                    box-shadow: 0 2px 3px 0 rgba(0,0,0,.2); 
-                    z-index: 9999; 
+                    transform: translateX(-50%);
+                    width: 265px;
+                    margin: 0;
+                    padding: 15px;
+                    box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
+                    z-index: 9999;
                     border: 1px solid #294474;
                     border-top-width:4px;
                     background: $brand-secondary;
@@ -226,7 +225,7 @@ header {
                         border-style: solid;
                         border-width: 0 15px 15px 15px;
                         border-color: transparent transparent #294474 transparent;
-                        @include position(absolute);
+                        //@include position(absolute);
                         top: 0;
                         left: 50%;
                         -webkit-transform: translate(-50%, -100%);
@@ -242,7 +241,7 @@ header {
             & > li.wide-menu{
                 & > ul.sub-menu{
                     width: 550px;
-                    @include display(flex, flex-start, wrap);
+                    //@include display(flex, flex-start, wrap);
                     & > li{
                         width: 50%;
                     }
@@ -252,7 +251,7 @@ header {
         ul.sub-menu{
             ul{
                 padding-left: 20px;
-                @include display(flex,'',wrap);
+                //@include display(flex,'',wrap);
                 margin-bottom: 0;
             }
         }
@@ -269,10 +268,10 @@ header.sticky{
     }
     .has-sticky-logo{
         .large-logo{
-            @include display(none);
+            //@include display(none);
         }
         .sticky-logo{
-            @include display(block);
+            //@include display(block);
         }
     }
     .main-navigation {
@@ -292,10 +291,10 @@ header.skew-btn{
     .contact-links{
         & > li{
           & > a{
-                @include transform(-20deg);
+                //@include transform(-20deg);
                 span{
-                    @include transform(20deg);
-                    @include display(block);
+                    //@include transform(20deg);
+                    //@include display(block);
                 }
             }
         }

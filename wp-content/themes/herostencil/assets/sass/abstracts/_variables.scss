@@ -59,17 +59,17 @@ $textarea-height-base:      170px;
 $wrapper-width:  1170px !default;
 
 // spacing : padding and margin
-$spaceamounts: (0, 20, 30, 40, 50);
+$spaceamounts: (0, 10, 15, 20, 35, 50, 70);
 
 // media query breakpoints.
 $breakpoints: (
-    'xsm': 320px,
-    'smp': 480px,
-    'sm': 640px,
-    'xmd': 767px,
-    'md': 992px,
-    'lg': 1024px,
-    'xl': 1200px
+    '359': 359px,
+    '480': 480px,
+    '640': 640px,
+    '767': 767px,
+    '992': 992px,
+    '1024': 1024px,
+    '1200': 1200px
 );
 
 // media breakpoint

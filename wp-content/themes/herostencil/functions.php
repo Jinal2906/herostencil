@@ -588,7 +588,7 @@ function action__init() {
     wp_register_style( 'parts-front-banner', get_stylesheet_directory_uri() . '/css/parts/parts-front-banner.css', array( 'twentynineteen-style' ), 'init' );
     wp_register_style( 'front-welcome', get_stylesheet_directory_uri() . '/assets/css/front-welcome.css', array( 'twentynineteen-style' ), 'init' );
     wp_register_style( 'parts-front-feature-testimonials', get_stylesheet_directory_uri() . '/css/parts/parts-front-feature-testimonials.css', array( 'twentynineteen-style' ), 'init' );
-    wp_register_style( 'parts-front-services', get_stylesheet_directory_uri() . '/css/parts/parts-front-services.css', array( 'twentynineteen-style' ), 'init' );
+    wp_register_style( 'front-service', get_stylesheet_directory_uri() . '/assets/css/front-service.css', array( 'twentynineteen-style' ), 'init' );
     wp_register_style( 'parts-front-testimonials', get_stylesheet_directory_uri() . '/css/parts/parts-front-testimonials.css', array( 'twentynineteen-style' ), 'init' );
     wp_register_style( 'parts-front-appointment', get_stylesheet_directory_uri() . '/css/parts/parts-front-appointment.css', array( 'twentynineteen-style' ), 'init' );
     wp_register_style( 'parts-front-blog', get_stylesheet_directory_uri() . '/css/parts/parts-front-blog.css', array( 'twentynineteen-style' ), 'init' );

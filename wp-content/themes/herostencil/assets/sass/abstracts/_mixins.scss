@@ -67,6 +67,10 @@
   }
 }
 
+@mixin test {
+	text-align: center;
+}
+
 //  RESPOND BETWEEN
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
@@ -150,4 +154,9 @@
 	justify-content: 	unquote($justify-content);
 	flex-wrap: 			unquote($flex-wrap);
 	align-items: 		unquote($align-items);
+}
+.heading-style {
+	color:red;
+	font-family: cursive;
+	font-weight: 700;
 }

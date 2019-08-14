@@ -23,14 +23,13 @@ header {
     z-index: 999;
     //@include transition(0.5s);
     box-sizing: border-box;
-    .wrapper{
+    .wrapper {
         //@include display(flex, space-between, wrap, center);
     }
 
     /* Header Logo */
-    .header-logo{
+    .header-logo {
         width: 220px;
-        height: auto;
         //@include display(block);
         //@include position(relative);
         a{
@@ -54,34 +53,28 @@ header {
         //@include display(flex,flex-end,wrap);
     }
     .quick-links{
-        width: 100%;
-        height: auto;
-        //@include display(block);
-        //@include position(relative);
     }
-    .contact-links{
+    .contact-links {
         margin: 0;
         padding: 0;
         list-style: none;
         //@include display(flex,flex-end,wrap);
-        li{
-            //@include position(relative);
+        li {
+            position: relative;
             margin: 0;
             margin-left: 15px;
             padding:0;
             pointer-events: all;
             z-index: 99;
             a{
-                font-size: 14px;
-                border-radius: 5px;
-                text-transform: uppercase;
+                @extend .position-relative, .d-block, .border-radius ;
                 color: $white;
                 font-weight: 700;
-                //@include transition(0.5s);
-                //@include display(block);
                 background: $brand-primary;
                 padding: 12px 20px;
-                //@include position(relative);
+                font-size: 14px;
+                text-transform: uppercase;
+
             }
             .quick-dropdown{
                 min-width: 100%;
@@ -94,7 +87,7 @@ header {
                 background: $brand-primary;
                 z-index: inherit;
                 list-style: none;
-                border-radius: 8px;
+                border-radius: $border-radius;
                 overflow: hidden;
                 li{
                     margin-left: 0;

@@ -1,10 +1,15 @@
 /*--- Welcome info Blocks ---*/
+.d-flex {
+	display: flex;
+}
 .welcome-informatics {
 	width: 100%;
 	height: auto;
 	margin-top: -150px;
 	z-index: 1;
 	.wrapper {
-	    text-align: center;
 	}
+}
+.test {
+
 }

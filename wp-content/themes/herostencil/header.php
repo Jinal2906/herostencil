@@ -144,7 +144,7 @@
             } ?>">
 
 
-            <header id="myHeader" class=" position-fixed <?php echo is_singular() && twentynineteen_can_show_post_thumbnail() ? 'site-header featured-image' : 'site-header'; if( 'yes' == get_field('follow_skew_buttons_layout','options') ) { echo ' skew-btn '; } ?>">
+            <header id="myHeader" class=" position-fixed cell-12 <?php echo is_singular() && twentynineteen_can_show_post_thumbnail() ? 'site-header featured-image' : 'site-header'; if( 'yes' == get_field('follow_skew_buttons_layout','options') ) { echo ' skew-btn '; } ?>">
                 <div class="wrapper d-flex align-items-center justify-content-between">
                     <?php if ( has_custom_logo() ) : ?>
                     <?php $mainLogo = get_theme_mod( 'custom_logo' );
@@ -152,7 +152,7 @@
                     $stickyLogo = get_theme_mod( 'sticky_logo' );
                     $responsiveLogo = get_theme_mod( 'responsive_logo' );
                     ?>
-                    <div class="header-logo mr-20 <?php if($stickyLogo){ echo ' has-sticky-logo '; } if($responsiveLogo){ echo ' has-responsive-logo '; } ?>">
+                    <div class="header-logo mr-20 height-auto <?php if($stickyLogo){ echo ' has-sticky-logo '; } if($responsiveLogo){ echo ' has-responsive-logo '; } ?>">
                         <?php // the_custom_logo(); ?>
                         <a href="<?php echo get_option('home'); ?>" class="cell-12">
 
@@ -167,12 +167,12 @@
                     </div>
                     <?php endif; ?>
                     <div class="header-navigation ">
-                        <div class="quick-links d-flex justify-content-end cell-12 ">
+                        <div class="quick-links d-flex justify-content-end cell-12 height-auto  ">
                             <ul class="contact-links d-flex align-items-center ">
                                 <!-- call -->
                                 <?php if (get_field('header_phone_number', 'options')) {
                                 ?>
-                                <li class="call position-relative">
+                                <li class="call ">
                                     <?php
                                     $total = count(get_field('header_phone_number', 'options'));
                                     $i = 1;while (have_rows('header_phone_number', 'options')): the_row();
@@ -197,7 +197,7 @@
                                 <!-- review -->
                                 <?php if (get_field('reviews', 'options')) {
                                 ?>
-                                <li class="review position-relative ">
+                                <li class="review  ">
                                     <?php
                                     $total2 = count(get_field('reviews', 'options'));
                                     $j = 1;while (have_rows('reviews', 'options')): the_row();?>

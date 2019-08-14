@@ -163,6 +163,10 @@
 	transition: 0.5s ease all;
 }
 
+.border-radius {
+	border-radius: 20px;
+}
+
 @each $spaceamount-key in $spaceamounts {
 	.row-#{$spaceamount-key} {
 		margin: 0 -#{$spaceamount-key}px;
@@ -235,6 +239,31 @@ $sidesX: (left, right);
 .cell-block {
 	display: block;
 }
+
+.width {
+	&-auto {
+		width: auto;
+	}
+	&-inherit {
+		width: inherit;
+	}
+	&-initial {
+		width: initial;
+	}
+}
+
+.height {
+	&-auto {
+		height: auto;
+	}
+	&-inherit {
+		height: inherit;
+	}
+	&-initial {
+		height: initial;
+	}
+}
+
 
 
 @each $bp-key, $bp in $breakpoints {

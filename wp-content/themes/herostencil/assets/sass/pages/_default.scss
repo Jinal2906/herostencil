@@ -19,3 +19,9 @@
 	padding-top: 191px;
 	//@include transition(0.5s);
 }
+
+.welcome-informatics {
+	.wrapper {
+		@extend .d-flex ;
+	}
+}

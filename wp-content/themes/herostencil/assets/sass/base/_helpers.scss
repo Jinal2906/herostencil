@@ -135,12 +135,16 @@
 	}
 }
 
-.block-hide {
-	opacity: 0;
-	visibility: hidden;
+.block-animate {
+	.opacity-0 {
+		opacity: 0;
+		visibility: hidden;
+	}
 	&:hover {
-		opacity: 1;
-		visibility: visible;
+		.opacity-0 {
+			opacity: 1;
+			visibility: visible;
+		}
 	}
 }
 
@@ -214,6 +218,14 @@ $sidesX: (left, right);
 		.py-#{$space} {
 			padding-#{$side}: #{$space}px;
 		}
+
+		// position
+		.position-#{$side}-#{$space}-px {
+			#{$side}: #{$space}px;
+		}
+		.position-#{$side}-#{$space}-pt {
+			#{$side}: percentage($space / 100);
+		}
 	}
 	@each $side in $sidesX {
 		// margin
@@ -228,6 +240,14 @@ $sidesX: (left, right);
 		.p-#{$space},
 		.px-#{$space} {
 			padding-#{$side}: #{$space}px;
+		}
+
+		// position
+		.position-#{$side}-#{$space} {
+			#{$side}: #{$space}px;
+		}
+		.position-#{$side}-#{$space}-pt {
+			#{$side}: percentage($space / 100);
 		}
 	}
 }
@@ -250,6 +270,12 @@ $sidesX: (left, right);
 	&-initial {
 		width: initial;
 	}
+	&-0 {
+		width: 0;
+	}
+	&-full {
+		width: 100%;
+	}
 }
 
 .height {
@@ -262,7 +288,39 @@ $sidesX: (left, right);
 	&-initial {
 		height: initial;
 	}
+	&-0 {
+		height: 0;
+	}
+	&-full {
+		height: 100%;
+	}
 }
+
+.overflow {
+	&-hidden {
+		overflow: hidden;
+	}
+	&-x-hidden {
+		overflow-x: hidden;
+	}
+	&-y-hidden {
+		overflow-y: hidden;
+	}
+	&-auto {
+		overflow: auto;
+	}
+	&-x-auto {
+		overflow-x: auto;
+	}
+	&-y-auto {
+		overflow-y: auto;
+	}
+}
+
+/* for home page image src set need to add specific padding top */
+// .image-src img {position: absolute; top: 50%; left: 50%; width: 100%; height: 100%; max-width: 100%; max-width: none; object-fit: cover; }
+
+
 
 
 
@@ -275,7 +333,15 @@ $sidesX: (left, right);
 				}
 			}
 		}
-
+		/*
+		.innbaner {
+			@each $pt-key in $innbaneramounts {
+				&.pt-#{$bp-key}-#{$pt-key} {
+					padding-top: percentage($pt-key / 100);
+				}
+			}
+		}
+		*/
 		@each $spaceamount-key in $spaceamounts {
 			.row-#{$bp-key}-#{$spaceamount-key} {
 				margin: 0 -#{$spaceamount-key}px;
@@ -359,5 +425,25 @@ $sidesX: (left, right);
 	&right {
 		float: right;
 		margin: 0 0 20px 20px;
+	}
+}
+
+.transform-center {
+	 -webkit-transform: translate(-50%, -50%);
+	 -ms-transform: translate(-50%, -50%);
+	 -o-transform: translate(-50%, -50%);
+	 transform: translate(-50%, -50%);
+}
+
+.image-src {
+	 @each $pt-key in $innbaneramounts {
+		&.pt-#{$pt-key} {
+			padding-top: percentage($pt-key / 100);
+		}
+	}
+	@extend .width-full, .position-relative, .overflow-hidden, .d-block, .height-0 ;
+	img {
+		@extend .position-absolute, .position-top-50-pt, .position-left-50-pt, .transform-center, .height-full ;
+		object-fit: cover;
 	}
 }

@@ -160,3 +160,8 @@
 	font-family: cursive;
 	font-weight: 700;
 }
+
+
+@mixin background-opacity($colorVar, $opacityVar) {
+    background: rgba($colorVar, $opacityVar);
+}

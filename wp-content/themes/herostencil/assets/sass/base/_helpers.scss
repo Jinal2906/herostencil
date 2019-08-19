@@ -95,6 +95,11 @@
 				-ms-flex-align: end;
 				align-items: flex-end;
 			}
+
+			&-items-start {
+				-ms-flex-align: start;
+				align-items: flex-start;
+			}
 		}
 		&.justify {
 			&-content-center {
@@ -112,10 +117,18 @@
 				-ms-flex-pack: justify;
 				justify-content: space-between;
 			}
+
 			&-content-around {
 				-ms-flex-pack: distribute;
 				justify-content: space-around;
 			}
+
+			&-content-start {
+				-webkit-box-pack: start;
+				-ms-flex-pack: start;
+				justify-content: flex-start;
+			}
+
 		}
 	}
 	&-block {
@@ -168,7 +181,9 @@
 }
 
 .border-radius {
-	border-radius: 20px;
+	&-full {
+		border-radius: 100% ;
+	}
 }
 
 @each $spaceamount-key in $spaceamounts {
@@ -187,6 +202,31 @@
 	.bottom-#{$spaceamount-key} {
 		bottom: #{$spaceamount-key}px;
 	}
+	.border-radius-#{$spaceamount-key} {
+		border-radius: #{$spaceamount-key}px;
+	}
+}
+
+/** font sizes for desktop */
+@for $i from 16 through 84 {
+	@if ( $i%4 == 0 ) {
+		.text-#{$i} {
+			font-size: #{$i}px;
+		}
+	}
+}
+
+/** font sizes for responsive */
+@each $bp-key, $bp in $breakpoints {
+	@include respond-below($bp-key) {
+		@for $i from 16 through 48 {
+			@if ( $i%2 == 0 ) {
+				.text-#{$bp-key}-#{$i} {
+					font-size: #{$i}px;
+				}
+			}
+		}
+	}
 }
 
 /* column structure */
@@ -200,6 +240,8 @@ $sidesX: (left, right);
 		width: percentage($i / $grid-columns);
 	}
 }
+
+
 
 @each $space in $spaceamounts {
 

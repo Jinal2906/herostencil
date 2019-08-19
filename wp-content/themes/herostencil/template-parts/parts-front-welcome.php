@@ -55,56 +55,45 @@ if(have_rows('welcome_informatics')){
     endwhile;
 }
 
-echo '<section class="welcome-section">' .
-    '<div class="wrapper">' .
-		'<div class="home-left">';
-
+echo '<section class="welcome-section py-50">' .
+    '<div class="wrapper d-flex align-items-center row-15">' .
+		'<div class="welcome-desc px-15 cell-5 ">';
 			while ( have_posts() ) : the_post();
-                echo '<h1>' . get_the_title() . '</h1>';
+                echo '<h1 class="text-secondary hover-text-primary">' . get_the_title() . '</h1>';
 				the_content();
 			endwhile;
-
     echo '</div>';
-
-
 		$welcomeSection = get_field('welcome_section');
-		if(have_rows('welcome_section')) :
-            echo '<div class="right-section">';
-                while (have_rows('welcome_section')) : the_row();
+		if( have_rows('welcome_section') ) :
+            echo '<div class="welcome-services-div cell-7 px-15 ">';
+                while ( have_rows('welcome_section') ) : the_row();
                     if ( have_rows( 'welcome_services' ) ) :
-
-                        echo '<ul class="welcome-services">';
-
+                        echo '<ul class="welcome-services-list d-flex row-10 list-none">';
                             while ( have_rows( 'welcome_services' ) ) : the_row();
                                 $serviceIcon = get_sub_field('service_icon');
                                 $serviceTitle = get_sub_field('service_title');
                                 $serviceLink = get_sub_field('service_link');
-
-
-                                $img_html = get_image( get_sub_field('service_icon'), 'small', true, false, array( 'class' => 'abc' ) );
-
-                                echo '<li>' .
-                                    '<div class="icon-part innbaner">' .
+                                echo '<li class=" cell-4 p-10 ">' .
+                                    '<div class="icon-part innbaner image-src pt-100 border-radius-full mb-20 ">' .
                                     (
                                         get_sub_field('service_icon')
-                                        ? $img_html
+                                        ? wp_get_attachment_image( get_sub_field('service_icon'), 'small' )
                                         : ''
                                     ) .
                                     '</div>' .
                                     '<div class="content-part">' .
-                                        '<h5>' .
-                                            ( !empty( $serviceLink ) ? '<a href="' . $serviceLink . '">' : '' ) .
-                                                $serviceTitle .
-                                            ( !empty( $serviceLink ) ? '</a>' : '' ) .
+                                        ( !empty( $serviceLink ) ? '<a href="' . $serviceLink . '">' : '' ) .
+                                        '<h5 class="text-20 text-767-18 text-480-16 text-center">' .
+                                            $serviceTitle .
                                         '</h5>' .
+                                        ( !empty( $serviceLink ) ? '</a>' : '' ) .
                                     '</div>'.
                                 '</li>';
                             endwhile;
-
                         echo '</ul>';
                     endif;
                     if (get_field('appointment_cta_text', 'options')) :
-                        echo '<div class="btn-center"><a class="read-more" href="' . get_field('appointment_cta_url', 'options') . '"><span>' .
+                        echo '<div class="text-right"><a class="read-more" href="' . get_field('appointment_cta_url', 'options') . '"><span>' .
                         get_field('appointment_cta_text', 'options') .
                         '</span></a></div>';
                     endif;

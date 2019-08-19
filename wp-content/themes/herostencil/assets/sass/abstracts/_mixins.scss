@@ -5,20 +5,140 @@
 // Responsive media breakpoint
 
 @mixin breakpoint($size) {
-	@if $size == xs { // Extra small devices (portrait phones, less than 640px)
-		@media ( max-width: $phone_portrait ) { @content; }
-	} @else if $size == sm { // Small devices (landscape phones, less than 767px)
-		@media ( max-width: $phone_landscape ) { @content; }
-	} @else if $size == smlandscape { // iPhone X landscape
-		@media ( min-height: 375px ) and ( max-width: 812px ) and ( orientation: landscape ) { @content; }
-	} @else if $size == md { // Medium devices (tablets, 768px and up)
-		@media ( min-width: $tablet_portrait ) and ( max-width: $tablet - 1 ) { @content; }
-	} @else if $size == lg { // Large devices (desktops, 1024px and up)
-		@media ( min-width: $tablet ) and ( max-width: $desktop) { @content; }
-	} @else if $size == xl { // Extra large devices (large desktops, 1200px and up)
-		@media ( min-width: $desktop+1 ) { @content; }
+	@if $size == 359 { // Extra small devices (portrait phones, less than 640px)
+		@media ( max-width: 359px ) { @content; }
+	} @else if $size == 480 { // Small devices (landscape phones, less than 767px)
+		@media ( max-width: 480px ) { @content; }
+	} @else if $size == 568 { // iPhone X landscape
+		@media ( max-height: 568px ) { @content; }
+	} @else if $size == 640 { // Medium devices (tablets, 768px and up)
+		@media ( max-width: 640px ) { @content; }
+	} @else if $size == 767 { // Large devices (desktops, 1024px and up)
+		@media ( max-width: 767px ) { @content; }
+	} @else if $size == 992 { // Extra large devices (large desktops, 1200px and up)
+		@media ( max-width: 992px ) { @content; }
+	} @else if $size == 1024 { // Extra large devices (large desktops, 1200px and up)
+		@media ( max-width: 1024px ) { @content; }
+	} @else if $size == 1200 { // Extra large devices (large desktops, 1200px and up)
+		@media ( max-width: 1200px ) { @content; }
 	}
 }
+
+
+$colors: (
+	primary: $brand-primary,
+	secondary: $brand-secondary,
+	white: $white,
+);
+$opacities: (
+	80: 0.80,
+);
+@mixin gen-props($prefix, $property) {
+	@each $color-name, $color in $colors {
+		.#{$prefix}-#{$color-name},
+		.hover-#{$prefix}-#{$color-name}:hover {
+			#{$property}: $color
+		}
+		.#{$prefix}-#{$color-name}-light,
+		.hover-#{$prefix}-#{$color-name}-light:hover {
+			@function pale($color) {
+				$light-color: lighten($color, 8%);
+				@return $light-color;
+			}
+			#{$property}: pale($color);
+		}
+		.#{$prefix}-#{$color-name}-dark,
+		.hover-#{$prefix}-#{$color-name}-dark:hover {
+			@function pale($color) {
+				$dark-color: darken($color, 8%);
+				@return $dark-color;
+			}
+			#{$property}: pale($color);
+		}
+		@each $opacity-name, $opacity in $opacities {
+			.#{$prefix}-#{$color-name}-#{$opacity-name} {
+				#{$property}: rgba($color, $opacity);
+			}
+			.#{$prefix}-#{$color-name}-light-#{$opacity-name} {
+				@function pale($color) {
+					$light-color-opacity: lighten($color, 8%);
+					@return $light-color-opacity;
+				}
+				#{$property}: rgba(pale($color), $opacity);
+			}
+			.#{$prefix}-#{$color-name}-dark-#{$opacity-name} {
+				@function pale($color) {
+					$dark-color-opacity: darken($color, 8%);
+					@return $dark-color-opacity;
+				}
+				#{$property}: rgba(pale($color), $opacity);
+			}
+		}
+	}
+}
+
+@include gen-props('text', 'color');
+@include gen-props('bg', 'background');
+
+
+
+// This is a list of all of our base
+// colors. we loop through this in
+// order to get a rainbow of different
+// palettes. Every color in this map
+// corresponds to a row of cubes.
+
+/*
+$colors: (
+  #ff0000
+  #e6b25e
+  #be69c1
+  #77c860
+  #cd668b
+  #6c6ec6
+);
+
+// This is a "palette" of functions that lets us get
+// a variant of a given base color.
+@function pale($color) {
+  // Used for the background.
+  @return lighten( desaturate( $color, 10 ), 30 );
+}
+@function light($color) {
+  // Used for the cube's top.
+  @return lighten( saturate( $color, 25 ), 20 );
+}
+@function dark($color) {
+  // Used for the cube's side.
+  @return darken( desaturate( $color, 20 ), 12 );
+}
+
+ @for $i from 1 to length($colors) + 1 {
+
+    // This variable is only used in this loop!
+    // And it gets overridden with every
+    // iteration of the loop!
+    $c: nth($colors, $i);
+    &:nth-child(#{$i}) {
+      background: pale($c);
+
+      .box {
+        background: $c;
+
+        &:before {
+          background: light($c);
+        }
+
+        &:after {
+          background: dark($c);
+        }
+      }
+    }
+  }
+
+
+*/
+
 
 // @include respond-above(sm) {}
 /* @mixin respond-above($breakpoint) {
@@ -67,10 +187,6 @@
   }
 }
 
-@mixin test {
-	text-align: center;
-}
-
 //  RESPOND BETWEEN
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
@@ -110,7 +226,7 @@
 }
 */
 // Responsive media grid breakpoint
-
+/*
 @mixin grid-breakpoint($size) {
 	@if $size == xs { // Small devices (landscape phones, less than 640px)
 		@media ( min-width: $phone_portrait+1 ) { @content; }
@@ -122,7 +238,7 @@
 		@media ( min-width: $desktop ) { @content; }
 	}
 }
-
+*/
 //Represent various position
 /*
 @mixin position($position:'', $topdirection:'', $rightdirection:'', $bottomdirection:'', $leftdirection:'') {

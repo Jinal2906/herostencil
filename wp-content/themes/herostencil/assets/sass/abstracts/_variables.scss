@@ -15,7 +15,7 @@ $font-size-large:  $font-size-base + 2 !default;
 
 // Colors
 $brand-primary:   #252869 !default;
-$brand-secondary: #BC3A00 !default;
+$brand-secondary: #8D3006 !default;
 $brand-tertiary: #BC3A00 !default;
 
 
@@ -26,8 +26,8 @@ $darkgray: #404043 !default;
 $lightgray: #ccc !default;
 
 // Heading font family
-$font-size-h1:  2.5rem !default;
-$font-size-h2:  2.125rem !default;
+$font-size-h1:  2.0rem !default;
+$font-size-h2:  1.8rem !default;
 $font-size-h3:  1.5rem !default;
 $font-size-h4:  1.375rem !default;
 $font-size-h5:  1.25rem !default;
@@ -66,17 +66,18 @@ $spaceamounts: (0, 10, 15, 20, 35, 50, 70);
 
 // media query breakpoints.
 $breakpoints: (
-    '359': 359px,
-    '480': 480px,
-    '640': 640px,
-    '767': 767px,
-    '992': 992px,
+    '1200': 1200px,
     '1024': 1024px,
-    '1200': 1200px
+    '992': 992px,
+    '767': 767px,
+    '640': 640px,
+    '568': 568px,
+    '480': 480px,
+    '359': 359px
 );
 
 $innbaneramounts: (25, 50, 60, 70, 75, 80, 90, 100, 110, 120, 125, 130, 140, 150, 175, 200);
-
+/*
 // media breakpoint
 $phone_small:      480px; //Extra small devices (small phones, less than 480px)
 $phone_portrait:   640px; //Extra small devices (portrait phones, less than 640px)
@@ -84,3 +85,4 @@ $phone_landscape:  767px; //Small devices (landscape phones, less than 767px)
 $tablet_portrait:  $phone_landscape + 1; //(tablets, 768px and up)
 $tablet:           992px; //Medium devices (tablets, 992px and up)
 $desktop:          1200px; //Extra large devices (large desktops, 1200px and up)
+*/

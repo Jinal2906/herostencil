@@ -33,7 +33,7 @@ if(have_rows('services')){
                                 ? $img_html
                                 : ''
                             ) .
-                            '<div class="service-content bg-white-80 width-full height-full p-15 d-flex justify-content-center align-content-center position-absolute position-top-0-px position-left-0-px transition opacity-0 ">' .
+                            '<div class="service-content bg-white-80 width-full height-full p-15 d-flex justify-content-center align-content-center position-absolute pos-top-0px pos-left-0px transition opacity-0 ">' .
                                 (
                                     get_sub_field('service_title')
                                     ? '<h3 class="mb-10 text-24 text-767-20 text-480-18 text-secondary ">' . get_sub_field('service_title') . '</h3>'

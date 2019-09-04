@@ -22,7 +22,7 @@ if ( has_post_thumbnail() ){
     }
 }
 
-echo '<div class="content">';
+echo '<div class="content p-50">';
         if ( function_exists('yoast_breadcrumb') ) {
           yoast_breadcrumb( '<div id="breadcrumbs" class="breadcrumbs"><div class="wrapper"><div class="inner-bc">','</div></div></div>' );
         } 

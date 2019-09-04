@@ -2,18 +2,19 @@
 // When having several themes, this file contains everything related to the
 // default one.
 // -----------------------------------------------------------------------------
-
 /**
  * Main content containers
  */
-.wrapper {
+
+/* .wrapper {
 	width: $wrapper-width;
 	max-width: 100%;
 	margin: 0 auto;
 	box-sizing: border-box;
-    padding: 0 15px;
+	padding: 0 15px;
 }
-#wrapper{
+
+#wrapper {
 	width: 100%;
 	flex: 1 0 auto;
 	padding-top: 191px;
@@ -22,6 +23,92 @@
 
 .welcome-informatics {
 	.wrapper {
-		@extend .d-flex ;
+		@extend .d-flex;
+	}
+} */
+/** slick slider pagination */
+.slick-dots {
+	margin: 0;
+	padding: 0;
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+
+	li {
+		width: 20px;
+		height: 20px;
+		background: color('white');
+		border-radius: 100%;
+		margin: 0 5px;
+		list-style: none;
+		cursor: pointer;
+		opacity: 0.48;
+
+		&.slick-active {
+			opacity: 1;
+		}
+
+		button {
+			display: none;
+		}
+	}
+}
+
+.entry .slick-dots li {
+	margin: 0 5px;
+}
+
+.slick-next,
+.slick-prev {
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	transition: 0.5s ease all;
+	-o-transition: 0.5s ease all;
+	-webkit-transition: 0.5s ease all;
+	width: 48px;
+	height: 48px;
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+	line-height: 0;
+	cursor: pointer;
+	border: 0;
+	font-size: 24px;
+	border-radius: 100%;
+	background: color('black');
+	color: color('white');
+}
+
+.slick-prev {
+	left: 0;
+}
+
+.slick-next {
+	right: 0;
+}
+
+.slick-next:hover,
+.slick-prev:hover {
+	background: color('brand-primary');
+}
+
+.slick-initialized .slick-slide {
+	outline: 0;
+}
+
+
+@include breakpoint(359){
+	.g-recaptcha {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		> div {
+			-webkit-transform: scale(0.82);
+			-ms-transform: scale(0.82);
+			-o-transform: scale(0.82);
+			transform: scale(0.82);
+		}
 	}
 }

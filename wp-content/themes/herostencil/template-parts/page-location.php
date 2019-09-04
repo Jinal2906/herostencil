@@ -40,44 +40,44 @@ echo '<div class="content">' ;
 			$myquery = new WP_Query ($wpq);
 			$article_count = $myquery->post_count;
 			if ($article_count) {
-			echo '<div class="locations-list">' ;
+			echo '<div class="locations-list d-flex row-10">' ;
 					$i=1; while ($myquery->have_posts()) : $myquery->the_post();
-					echo '<div class="loc_list">' .
+					echo '<div class="loc_list cell-4 ml-10 mr-10 mb-20 pb-50 cell-992-6 cell-480-10 position-relative">' .
 						'<div class="loc_thumb">';
-							if ( has_post_thumbnail() ) { 
+							if (has_post_thumbnail()) { 
 								the_post_thumbnail('full'); 
-							} ;
+							};
 						echo '</div>'.
-						'<div class="location_content">' .	
+						'<div class="location_content p-20">' .	
 							(
 								get_field('custom_title')
-								?'<h4><strong>' . get_field('custom_title') . '</strong></h4>'
+								?'<h4 class="mt-10 font-bold">' . get_field('custom_title') . '</h4>'
 								: ''
 							) .
 							(
 								get_field('location_address')
-								?'<span class="adrs">Address </span><p>' . get_field('location_address') . '</p>'
+								?'<span class="adrs font-bold text-20">Address </span><p>' . get_field('location_address') . '</p>'
 								: ''
 							) .
 							(
 								get_field('phone_number')
-								?'<div class="location-contact"><strong>Phone:</strong><a href="tel:' . preg_replace('/[^0-9]/', '', get_field('phone_number') ) . '">' . get_field('phone_number') . '</a></div>'
+								?'<div class="location-contact"><span class="font-bold">Phone:</span><a href="tel:' . preg_replace('/[^0-9]/', '', get_field('phone_number') ) . '">' . get_field('phone_number') . '</a></div>'
 								: ''
 							) .			
 							(
 								get_field('fax_number')
-								?'<div class="location-contact"><strong>Fax:</strong>' . get_field('fax_number') . '</div>'
+								?'<div class="location-contact"><span class="font-bold">Fax:</span>' . get_field('fax_number') . '</div>'
 								: ''
 							) .	
 							(
 								get_field('location_email')
-								? '<div class="location-contact"><strong>Email:</strong><a href="mailto:' . get_field('location_email'). '">' .get_field('location_email') . '</a></div>'
+								? '<div class="location-contact"><span class="font-bold">Email:</span><a href="mailto:' . get_field('location_email'). '">' .get_field('location_email') . '</a></div>'
 								: ''
 							) .
 						'</div>' .
-						'<div class="location_btns">' .
-							'<a href="' .get_the_permalink() . '" class="info_btn">Info</a>' .
-							'<a class="map_btn" target="_blank" href="' . get_field('location_map_link') . '"> Map </a>' .
+						'<div class="location_btns position-absolute pos-bottom-0px pos-left-0px width-full d-flex flex-nowrap">' .
+							'<a class="info_btn cell-6 p-10 text-center text-16" href="' .get_the_permalink() . '">Info</a>' .
+							'<a class="map_btn cell-6 p-10 text-center text-16" target="_blank" href="' . get_field('location_map_link') . '"> Map </a>' .
 						'</div>' .
 					'</div>' ;
 					$i++; endwhile;

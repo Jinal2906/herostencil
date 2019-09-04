@@ -135,7 +135,7 @@
 		display: block;
 	}
 	&-inline-block {
-		display: block;
+		display: inline-block;
 	}
 	&-none {
 		display: none;
@@ -166,10 +166,10 @@
 	&-none {
 		list-style: none;
 	}
-	&.disc {
+	&-disc {
 		list-style: disc;
 	}
-	&.circle {
+	&-circle {
 		list-style: circle;
 	}
 }
@@ -204,6 +204,16 @@
 	}
 	.border-radius-#{$spaceamount-key} {
 		border-radius: #{$spaceamount-key}px;
+	}
+	.width-#{$spaceamount-key} {
+		width: #{$spaceamount-key}px;
+		min-width: #{$spaceamount-key}px;
+		max-width: #{$spaceamount-key}px;
+	}
+	.height-#{$spaceamount-key} {
+		height: #{$spaceamount-key}px;
+		min-height: #{$spaceamount-key}px;
+		max-height: #{$spaceamount-key}px;
 	}
 }
 
@@ -262,10 +272,10 @@ $sidesX: (left, right);
 		}
 
 		// position
-		.position-#{$side}-#{$space}-px {
+		.pos-#{$side}-#{$space}px {
 			#{$side}: #{$space}px;
 		}
-		.position-#{$side}-#{$space}-pt {
+		.pos-#{$side}-#{$space}pt {
 			#{$side}: percentage($space / 100);
 		}
 	}
@@ -285,21 +295,22 @@ $sidesX: (left, right);
 		}
 
 		// position
-		.position-#{$side}-#{$space} {
+		.pos-#{$side}-#{$space}px {
 			#{$side}: #{$space}px;
 		}
-		.position-#{$side}-#{$space}-pt {
+		.pos-#{$side}-#{$space}pt {
 			#{$side}: percentage($space / 100);
 		}
 	}
 }
 
-.cell-none {
-	display: none;
-}
-
-.cell-block {
-	display: block;
+.cell {
+	&-none {
+		display: none;
+	}
+	&-block {
+		display: block;
+	}
 }
 
 .width {
@@ -359,11 +370,61 @@ $sidesX: (left, right);
 	}
 }
 
+.box-sizing {
+	&-border-box{
+		box-sizing: border-box;
+	}
+	&-content-box {
+		box-sizing: content-box;
+	}
+}
+
+.pointer-events {
+	&-all {
+		pointer-events: all;
+	}
+	&-none {
+		pointer-events: none;
+	}
+}
+
+.font {
+	&-bold {
+		font-weight: 700;
+	}
+	&-normal {
+		font-weight: 400;
+	}
+	&-light {
+		font-weight: 300;
+	}
+	&-extra {
+		&-bold {
+			font-weight: 900;
+		}
+		&-light {
+			font-weight: 100;
+		}
+	}
+}
+
+
+/* for text-transform property */
+@each $text-key in $texttransform {
+	.text-#{$text-key} {
+		text-transform: #{$text-key};
+	}
+}
+
+
 /* for home page image src set need to add specific padding top */
 // .image-src img {position: absolute; top: 50%; left: 50%; width: 100%; height: 100%; max-width: 100%; max-width: none; object-fit: cover; }
 
-
-
+@each $align-key in $textalign {
+	.text-#{$align-key} {
+		text-align: #{$align-key};
+	}
+}
 
 
 @each $bp-key, $bp in $breakpoints {
@@ -387,6 +448,18 @@ $sidesX: (left, right);
 		@each $spaceamount-key in $spaceamounts {
 			.row-#{$bp-key}-#{$spaceamount-key} {
 				margin: 0 -#{$spaceamount-key}px;
+			}
+		}
+
+		@each $align-key in $textalign {
+			.text-#{$bp-key}-#{$align-key} {
+				text-align: #{$align-key};
+			}
+		}
+
+        @each $text-key in $texttransform {
+			.text-#{$bp-key}-#{$text-key} {
+				text-transform: #{$text-key};
 			}
 		}
 
@@ -427,24 +500,11 @@ $sidesX: (left, right);
 	}
 }
 
-/* text alignment */
-.text {
-	&-center {
-		text-align: center;
-	}
-
-	&-right {
-		text-align: right;
-	}
-
-	&-left {
-		text-align: left;
-	}
-
-	&-justify {
-		text-align: justify;
-	}
+.mx-auto {
+	margin-left: auto;
+	margin-right: auto;
 }
+
 
 /* wordpress align class */
 .align {
@@ -483,9 +543,10 @@ $sidesX: (left, right);
 			padding-top: percentage($pt-key / 100);
 		}
 	}
-	@extend .width-full, .position-relative, .overflow-hidden, .d-block, .height-0 ;
+	@extend .width-full, .position-relative, .overflow-hidden, .d-block ;
+	height:0;
 	img {
-		@extend .position-absolute, .position-top-50-pt, .position-left-50-pt, .transform-center, .height-full ;
+		@extend .position-absolute, .pos-top-50pt, .pos-left-50pt, .transform-center, .height-full ;
 		object-fit: cover;
 	}
 }

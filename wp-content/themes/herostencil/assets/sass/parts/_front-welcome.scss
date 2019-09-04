@@ -1,0 +1,32 @@
+/*--- Welcome info Blocks ---*/
+.welcome-informatics {
+    z-index: 9;
+}
+.welcome-informatics .wrapper {
+    margin-top: -100px;
+}
+.welcome-informatics .wrapper:before {
+    content: "";
+    border-bottom: 90px solid color('brand-primary');
+    border-left: 45px solid transparent;
+    border-right: 45px solid transparent;
+    height: 0;
+    width: 100%;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    z-index: -1;
+}
+.group p,
+.group p a {
+    color: color('white');
+    font-weight: 700;
+}
+.group p {
+    margin-bottom: 5px;
+}
+.group-2 {
+	@include breakpoint(992){
+		order: -1;
+	}
+}

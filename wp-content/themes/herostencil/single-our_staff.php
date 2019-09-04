@@ -27,8 +27,8 @@ echo
                 echo '<h1>'. $pageObj->post_title .'</h1>';
             }
             echo 
-            '<div class="staff-single">' .
-                '<div class="staff-left">' .
+            '<div class="staff-single d-flex">' .
+                '<div class="staff-left mb-640-20">' .
                     (
                         has_post_thumbnail(get_the_ID())
                         ? get_the_post_thumbnail(get_the_ID(), 'staff-thumb', array( 'class' => '' ) )
@@ -42,14 +42,14 @@ echo
                         echo '</div>';
                     } 
                 echo '</div>' .
-                '<div class="staff-right">' .
-                    '<h3>' .
+                '<div class="staff-right ml-25 ml-640-0">' .
+                    '<h3 class="mb-15 pb-15 text-24 mt-0">' .
                         get_the_title() ;
                         $sdesi = get_field('staff_designation');
                         echo
                         (
                             $sdesi
-                            ? '<span>' . get_field('staff_designation') .'</span>'
+                            ? ', <span class="text-16 font-normal ml-5">' . get_field('staff_designation') .'</span>'
                             :''
                         ) .
                     '</h3>' .

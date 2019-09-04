@@ -384,7 +384,7 @@ add_action( 'after_setup_theme', 'twentynineteen_content_width', 0 );
  * Enqueue scripts and styles.
  */
 function site_styles() {
-    wp_enqueue_style( 'twentynineteen-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
+    //wp_enqueue_style( 'twentynineteen-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
     wp_style_add_data( 'twentynineteen-style', 'rtl', 'replace' );
 
@@ -585,16 +585,16 @@ function action__init() {
         wp_register_script( 'lazysizes', get_theme_file_uri( '/js/lazysizes/lazysizes.min.js' ), array(), '3.0.0' );
 
     /* Parts for Welcome */
-    wp_register_style( 'parts-front-banner', get_stylesheet_directory_uri() . '/css/parts/parts-front-banner.css', array( 'twentynineteen-style' ), 'init' );
-    wp_register_style( 'front-welcome', get_stylesheet_directory_uri() . '/assets/css/front-welcome.css', array( 'twentynineteen-style' ), 'init' );
-    wp_register_style( 'parts-front-feature-testimonials', get_stylesheet_directory_uri() . '/css/parts/parts-front-feature-testimonials.css', array( 'twentynineteen-style' ), 'init' );
-    wp_register_style( 'front-service', get_stylesheet_directory_uri() . '/assets/css/front-service.css', array( 'twentynineteen-style' ), 'init' );
-    wp_register_style( 'parts-front-testimonials', get_stylesheet_directory_uri() . '/css/parts/parts-front-testimonials.css', array( 'twentynineteen-style' ), 'init' );
-    wp_register_style( 'parts-front-appointment', get_stylesheet_directory_uri() . '/css/parts/parts-front-appointment.css', array( 'twentynineteen-style' ), 'init' );
-    wp_register_style( 'parts-front-blog', get_stylesheet_directory_uri() . '/css/parts/parts-front-blog.css', array( 'twentynineteen-style' ), 'init' );
+    //wp_register_style( 'parts-front-banner', get_stylesheet_directory_uri() . '/css/parts/parts-front-banner.css', array( 'twentynineteen-style' ), 'init' );
+    //wp_register_style( 'front-welcome', get_stylesheet_directory_uri() . '/assets/css/front-welcome.css', array( 'twentynineteen-style' ), 'init' );
+    //wp_register_style( 'parts-front-feature-testimonials', get_stylesheet_directory_uri() . '/css/parts/parts-front-feature-testimonials.css', array( 'twentynineteen-style' ), 'init' );
+    //wp_register_style( 'front-service', get_stylesheet_directory_uri() . '/assets/css/front-service.css', array( 'twentynineteen-style' ), 'init' );
+    //wp_register_style( 'parts-front-testimonials', get_stylesheet_directory_uri() . '/assets/css/front-testimonials.css', array( 'twentynineteen-style' ), 'init' );
+    //wp_register_style( 'parts-front-appointment', get_stylesheet_directory_uri() . '/css/parts/parts-front-appointment.css', array( 'twentynineteen-style' ), 'init' );
+    //wp_register_style( 'parts-front-blog', get_stylesheet_directory_uri() . '/css/parts/parts-front-blog.css', array( 'twentynineteen-style' ), 'init' );
 
     /* inner pages */
-    wp_register_style( 'page-contact', get_stylesheet_directory_uri() . '/css/parts/page-contact.css', array( 'twentynineteen-style' ), 'init' );
+    /*wp_register_style( 'page-contact', get_stylesheet_directory_uri() . '/css/parts/page-contact.css', array( 'twentynineteen-style' ), 'init' );
     wp_register_style( 'page-location-list', get_stylesheet_directory_uri() . '/css/parts/page-location-list.css', array( 'twentynineteen-style' ), 'init' );
     wp_register_style( 'single-location', get_stylesheet_directory_uri() . '/css/single-location.css', array( 'twentynineteen-style' ), 'init' );
     wp_register_style( 'page-faq', get_stylesheet_directory_uri() . '/css/parts/page-faq.css', array( 'twentynineteen-style' ), 'init' );
@@ -607,9 +607,9 @@ function action__init() {
     wp_register_style( 'content-patientinfo', get_stylesheet_directory_uri() . '/css/parts/content-patientinfo.css', array( 'twentynineteen-style' ), 'init' );
     wp_register_style( 'content-servicessources', get_stylesheet_directory_uri() . '/css/parts/content-servicessources.css', array( 'twentynineteen-style' ), 'init' );
     wp_register_style( 'content-accordion-block', get_stylesheet_directory_uri() . '/css/parts/content-accordion-block.css', array( 'twentynineteen-style' ), 'init' );
-    wp_register_style( 'page-pt-wired-app', get_stylesheet_directory_uri() . '/css/parts/page-pt-wired-app.css', array( 'twentynineteen-style' ), 'init' );
+    wp_register_style( 'page-pt-wired-app', get_stylesheet_directory_uri() . '/css/parts/page-pt-wired-app.css', array( 'twentynineteen-style' ), 'init' );*/
 
-    wp_enqueue_style( 'sass-style', get_stylesheet_directory_uri() . '/assets/css/style.css', array( 'twentynineteen-style' ), 'init' );
+    //wp_enqueue_style( 'sass-style', get_stylesheet_directory_uri() . '/assets/css/style.css', array( 'twentynineteen-style' ), 'init' );
 
     /* scripts */
     wp_register_script( 'isotop-lib', get_stylesheet_directory_uri() . '/js/isotope.pkgd.min.js', array( 'jquery' ), 'init' );

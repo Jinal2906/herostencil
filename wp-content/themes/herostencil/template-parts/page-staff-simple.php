@@ -38,20 +38,22 @@ echo '<div class="content">' ;
             $article_count = $myquery->post_count;
             '<h4 class="staff-head">' . $term->name . '</h4>' ;
             if ($article_count) {
-              echo '<ul class="staff-list">' ;
+              echo '<ul class="staff-list p-0 d-flex row-10 list-none">' ;
                     $i=1; while ($myquery->have_posts()) : $myquery->the_post();
-                    echo '<li>' .
-                      '<a href="' . get_the_permalink() . '">' .
-                          (
-                            has_post_thumbnail($myquery->ID)
-                            ? get_the_post_thumbnail( $myquery->ID,  'staff-thumb', array( 'class' => '' ) )
-                            : '<img src="' . get_template_directory_uri() .'/images/defaultUser.jpg" alt="Staff Image" >'
-                          ) .
-                      '</a>' .
-                      '<div class="staff-short"> ' .
-                        '<h5><a class="" href="' .get_the_permalink() .'">' . get_the_title() . '</a></h5>' .
-                        '<span>' . get_field('staff_designation') . '</span>' .
-                      '</div>' .
+                    echo '<li class="cell-3 cell-992-4 cell-640-6 cell-480-10 p-10 box-sizing-border-box">' .
+                          '<div class="in bg-gray">' .
+                              '<a class="d-block" href="' . get_the_permalink() . '">' .
+                                  (
+                                    has_post_thumbnail($myquery->ID)
+                                    ? get_the_post_thumbnail( $myquery->ID,  'staff-thumb', array( 'class' => 'width-full' ) )
+                                    : '<img class="width-full" src="' . get_template_directory_uri() .'/images/defaultUser.jpg" alt="Staff Image" >'
+                                  ) .
+                              '</a>' .
+                              '<div class="staff-short width-full p-20"> ' .
+                                '<h5 class="m-0 text-16"><a class="" href="' .get_the_permalink() .'">' . get_the_title() . '</a></h5>' .
+                                '<span class="d-block">' . get_field('staff_designation') . '</span>' .
+                              '</div>' .
+                        '</div>' .
                     '</li>' ;
                     $i++; endwhile;
             echo '</ul>' ;

@@ -1,0 +1,24 @@
+/** theme popup */
+div.theme-popup {
+    width: 100%;
+    max-width: 650px;
+    padding: 10px;
+
+    .inner-popup {
+        padding: 15px;
+        border: 1px solid #ccc;
+    }
+
+    button.fancybox-button {
+        background: #ccc;
+        opacity: 1;
+
+        &:hover {
+            background: #000;
+        }
+    }
+
+    .fancybox-button svg path {
+        fill: #fff;
+    }
+}

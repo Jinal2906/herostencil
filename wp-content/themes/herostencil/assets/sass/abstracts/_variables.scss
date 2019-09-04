@@ -13,17 +13,71 @@ $font-size-base:   16px !default;
 $font-size-small:  $font-size-base - 2 !default;
 $font-size-large:  $font-size-base + 2 !default;
 
-// Colors
-$brand-primary:   #252869 !default;
-$brand-secondary: #8D3006 !default;
-$brand-tertiary: #BC3A00 !default;
-
-
 // Start with assigning color names to specific hex values.
-$white:    #fff !default;
-$black:    #000 !default;
-$darkgray: #404043 !default;
-$lightgray: #ccc !default;
+/*color('white'):      #fff !default;
+$lightwhite: #f6f6f6 !default;
+$black:      #000 !default;
+$darkgray:   #404043 !default;
+$lightgray:  #ccc !default;*/
+
+
+
+
+    $color-percent-change: 4%;
+
+    $colors: (
+        'brand-primary': #252869,
+        'brand-secondary': #8D3006,
+        'brand-tertiary': #BC3A00,
+        'white':      #fff,
+        'gray-light': #f1f1f1,
+        'black':      #000,
+        'gray':   #555555,
+    );
+
+    $colormap: ();
+
+    @each $name, $color in $colors {
+      $generated: (
+
+        'lightest': lighten($color, ($color-percent-change * 3)),
+        'lighter': lighten($color, ($color-percent-change * 2)),
+        'light': lighten($color, ($color-percent-change * 1)),
+        'base': $color,
+        'dark': darken($color, ($color-percent-change * 1)),
+        'darker': darken($color, ($color-percent-change * 2)),
+        'darkest': darken($color, ($color-percent-change * 3)),
+
+      );
+      $colormap: map-merge($colormap, ($name: $generated));
+    }
+
+    @function color($color, $type: 'base') {
+        @if map-has-key($colormap, $color) && map-has-key(map-get($colormap, $color), $type) {
+            $result:  map-get(map-get($colormap, $color), $type);
+        }
+        @return $result;
+    }
+
+
+
+/*
+@each $colorLightShade-key, $colorchanges in $colorLightShade {
+    @each $colorVar-key, $colorVal-key, $colorchanges-key in $colorVar, $colorVal, $colorchanges {
+        //#{$colorVar-key}-#{$colorLightShade-key} : lighten(adjust-hue($colorVal-key, $colorchanges-key), 10%);
+        #{$colorVar-key} : #{$colorLightShade-key};
+    }
+}*/
+
+// @each $colorLightShade-key in $colorLightShade {
+//     @each $colorVal-key in $colorVal {
+//         @each $colorchanges-key in $colorchanges {
+//             #{$colorVar-key}-#{$colorLightShade-key}-#{$colorVal-key}-#{$colorchanges-key} : 'tets';
+//         }
+//     }
+// }
+
+
 
 // Heading font family
 $font-size-h1:  2.0rem !default;
@@ -41,28 +95,34 @@ $headings-line-height:   1.4 !default;
 $border-radius: 0.5rem;
 
 // Forms
-$label-color:               $black;
+$label-color:               color('black');
 $label-font-weight:         400;
 $label-font-family:         $font-family-base;
 $label-font-size:           $font-size-small;
 
-$input-bg:                  $white;
-$input-font-family:         $font-family-base;
+$input-bg:                  color('white');
+$input-height:              44px;
+$input-color:               color('brand-primary');
+$input-color-placeholder:   color('brand-secondary');
 $input-font-size:           $font-size-base;
+$input-font-family:         $font-family-base;
 $input-font-weight:         400;
-$input-color:               $brand-primary;
-$input-color-placeholder:   $brand-secondary;
-$input-height:              45px;
-$input-radius:              0;
-$input-border-color:        $brand-secondary;
-$input-border-color-focus:  $brand-secondary;
+$input-radius:              10px;
+$input-border-color:        color('brand-secondary');
+$input-border-color-focus:  color('brand-secondary');
 $textarea-height-base:      170px;
 
 //Container's maximum width
 $wrapper-width:  1170px !default;
 
+
+//text-transform property
+$texttransform: ("uppercase", "capitalize", "lowercase", "none");
+
 // spacing : padding and margin
-$spaceamounts: (0, 10, 15, 20, 35, 50, 70);
+$spaceamounts: (0, 5, 10, 15, 20, 25, 30, 35, 50, 70);
+
+$textalign: ("left", "right", "center", "justify");
 
 // media query breakpoints.
 $breakpoints: (

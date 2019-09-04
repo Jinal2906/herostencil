@@ -1,2 +1,9 @@
 /*--- Welcome info Blocks ---*/
+.group p, .group p a {
+  color: #fff;
+  font-weight: 700;
+}
+.group p {
+  margin-bottom: 5px;
+}
 /*# sourceMappingURL=front-welcome.css.map */

@@ -32,10 +32,10 @@ echo '<div class="content">' ;
                 '<h1>' . get_the_title() . '</h1>' ;    
                 $terms = get_terms('staff_category');
                 echo '<div class="container">' .
-                    '<ul class="masonary-list">' .
-                        '<li><a href="#" data-filter="*" class="current read-more" id="all" data-sort-by="number"><span>' . esc_attr('View all', 'bodygears') . '</span></a></li>' ;
+                    '<ul class="masonary-list m-0 mb-20 p-0 d-flex list-none">' .
+                        '<li class="ml-5 mr-5 p-0 mb-767-10"><a href="#" data-filter="*" class="current read-more d-inline-block" id="all" data-sort-by="number"><span>' . esc_attr('View all', 'bodygears') . '</span></a></li>' ;
                         foreach ($terms as $term) {
-                            echo '<li><a class="read-more" href="javascript:;" data-filter=".' . $term->slug . '" id="' .    $term->slug . '" data-sort-by="number"><span>' . ucfirst($term->name) . '</span></a></li>';
+                            echo '<li class="ml-5 mr-5 p-0 mb-767-10"><a class="d-inline-block read-more" href="javascript:;" data-filter=".' . $term->slug . '" id="' .    $term->slug . '" data-sort-by="number"><span>' . ucfirst($term->name) . '</span></a></li>';
                         }
                     echo '</ul>' ;
                 echo '</div>' .
@@ -44,7 +44,7 @@ echo '<div class="content">' ;
                         ? '<div class="content-banner ' . $contentBanner . ' ">' . get_the_post_thumbnail() . '</div>'
                         : ''
                     ) ;
-                    echo '<ul class="staff-list">' ;
+                    echo '<ul class="staff-list p-0 d-flex row-10 list-none">' ;
                     $args = array(
                         'post_type' => 'our_staff',
                         'posts_per_page'  => -1,
@@ -67,18 +67,18 @@ echo '<div class="content">' ;
                         $terms = wp_get_post_terms($post->ID, 'staff_category');
                         foreach ($terms as $term) {$categories[] = $term->slug;}
                         $stafflist = implode(" ", $categories); 
-                        echo '<li class="element-item ' . $stafflist . '">' .
-                            '<div class="in">' .
-                                '<a class="stflink" href="' . get_the_permalink() . '">' ;
+                        echo '<li class="element-item cell-3 cell-992-4 cell-640-6 cell-480-10 p-10 box-sizing-border-box ' . $stafflist . '">' .
+                            '<div class="in bg-gray">' .
+                                '<a class="stflink d-block" href="' . get_the_permalink() . '">' ;
                                     if (has_post_thumbnail()) {
-                                        the_post_thumbnail('staff-thumb');
+                                        the_post_thumbnail('staff-thumb', array('class' => 'width-full'));
                                     } else { 
-                                        echo '<img src="' .get_template_directory_uri() .'/images/defaultUser.jpg" alt="Staff Image" >';
+                                        echo '<img class="width-full" src="' .get_template_directory_uri() .'/images/defaultUser.jpg" alt="Staff Image" >';
                                     }
                                 echo '</a> '.
-                                '<div class="staff-short">' .
-                                    '<h5><a class="" href="<?php the_permalink();?>">' . get_the_title() . '</a></h5>'.
-                                    '<span>' . get_field('staff_designation') .  '</span>' .
+                                '<div class="staff-short width-full p-20">' .
+                                    '<h5 class="m-0 text-16"><a class="" href="<?php the_permalink();?>">' . get_the_title() . '</a></h5>'.
+                                    '<span class="d-block">' . get_field('staff_designation') .  '</span>' .
                                 '</div>' .
                             '</div>' .
                         '</li>' ;

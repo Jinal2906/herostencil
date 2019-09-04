@@ -9,22 +9,22 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	padding: 10px 15px;
-	color: $white;
+	color: color('white');
 	font-size: $font-size-base;
 	line-height: 1.5;
 	text-align: center;
 	text-transform: uppercase;
 	border-radius: 0px;
 	border: none;
-	background-color: $brand-primary;
+	background-color: color('brand-primary');
 	-webkit-appearance: button;
 
 	&:hover,
 	&:focus {
-		color: $white;
+		color: color('white');
 		outline: none;
 		cursor: pointer;
-		background-color: $brand-secondary;
+		background-color: color('brand-secondary');
 	}
 }
 
@@ -32,33 +32,96 @@ input[type="submit"] {
 	display: inline-block;
 	padding: 10px 15px;
 	vertical-align: top;
-	color: $white;
+	color: color('white');
 	font-size: $font-size-base;
 	line-height: 1.5;
 	text-align: center;
 	text-transform: uppercase;
 	border: none;
 	border-radius: 0px;
-	background-color: $brand-primary;
+	background-color: color('brand-primary');
 
 	&:hover,
 	&:focus {
-		color: $white;
+		color: color('white');
 		text-decoration: none;
-		background-color: $brand-secondary;
+		background-color: color('brand-secondary');
 	}
 }
 
 .btn-link {
 	margin-bottom: 2px;
-	color: $brand-primary;
+	color: color('brand-primary');
 	font-size: $font-size-base;
-	border-bottom: 1px solid $brand-primary;
+	border-bottom: 1px solid color('brand-primary');
 	text-decoration: none;
 
 	&:hover,
 	&:focus {
-		color: $brand-secondary;
+		color: color('brand-secondary');
 		text-decoration: none;
+	}
+}
+
+.skew-btn .submit-container .submit-wrap .nf-field-element {
+	-webkit-transform: skewX(-20deg);
+	-ms-transform: skewX(-20deg);
+	-o-transform: skewX(-20deg);
+	transform: skewX(-20deg);
+
+	input {
+		-webkit-transform: skewX(20deg);
+		-ms-transform: skewX(20deg);
+		-o-transform: skewX(20deg);
+		transform: skewX(20deg);
+	}
+}
+
+body.logged-in header {
+  top: 32px;
+}
+
+.btn-center {
+  text-align: center;
+}
+
+.read-more {
+  color: color('white');
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 0;
+  padding: 12px 23px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  background:color('brand-secondary');
+  -webkit-transition: 0.5s ease all;
+  -o-transition: 0.5s ease all;
+  transition: 0.5s ease all;
+  &:hover {
+    background: #252869;
+    color: color('white');
+  }
+}
+
+/** slew btn */
+.skew-btn .read-more {
+	-webkit-transform: skewX(-20deg);
+	-ms-transform: skewX(-20deg);
+	-o-transform: skewX(-20deg);
+	transform: skewX(-20deg);
+
+	> span {
+		-webkit-transform: skewX(20deg);
+		-ms-transform: skewX(20deg);
+		-o-transform: skewX(20deg);
+		transform: skewX(20deg);
+		display: block;
+	}
+}
+@media (min-width: 768px) {
+	.sticky-header {
+		padding-top: 0 !important;
 	}
 }

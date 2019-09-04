@@ -1,11 +1,153 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
-
 /*--- footer ---*/
+
 .main-footer {
 	width: 100%;
 	height: auto;
-	background: $brand-secondary;
+	background: color('brand-secondary');
 	line-height: normal;
+}
+
+footer {
+	width: 100%;
+	height: auto;
+	display: block;
+	position: relative;
+	background: #404043;
+
+	.top-footer {
+		padding: 50px 0;
+
+		.wrapper {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+	}
+
+	.left-location,
+	.right-navigation {
+		width: 48%;
+	}
+
+	.single-location {
+		width: 100%;
+		margin-bottom: 20px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.loc-address,
+		.location-map {
+			width: calc(50% - 10px);
+		}
+
+		h4 {
+			font-size: 16px;
+			font-weight: 700;
+			margin-bottom: 10px;
+			color: #fff;
+
+			a {
+				font-size: 16px;
+				font-weight: 700;
+				margin-bottom: 10px;
+				color: #fff;
+			}
+		}
+
+		p {
+			font-size: 16px;
+			margin-bottom: 5px;
+			color: #fff;
+
+			a {
+				color: #fff;
+			}
+		}
+
+		.socialmedialinks {
+			padding-top: 5px;
+
+			ul {
+				justify-content: flex-start;
+			}
+		}
+	}
+
+	.single-menu {
+		h2 {
+			font-size: 16px;
+			color: #fff;
+			margin-bottom: 0;
+		}
+
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		a {
+			font-size: 16px;
+			color: #fff;
+
+			&:hover {
+				color: #e87e41;
+			}
+		}
+
+		li.current_page_item a {
+			color: #e87e41;
+		}
+	}
+
+	.right-navigation {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	.single-menu {
+		width: calc(50% - 10px);
+	}
+}
+
+.copyright-block {
+	padding: 20px 0;
+	background-color: #252869;
+
+	p {
+		color: #fff;
+		font-size: 14px;
+		margin: 0;
+	}
+
+	a {
+		color: #fff;
+		font-size: 14px;
+		margin: 0;
+
+		&:hover {
+			color: #BC3A00;
+		}
+	}
+
+	.wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.copyright,
+	.website-by {
+		margin: 5px 0;
+	}
+
+	.socialmedialinks {
+		display: none;
+	}
 }

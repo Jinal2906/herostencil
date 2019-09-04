@@ -5,56 +5,81 @@
 // Responsive media breakpoint
 
 @mixin breakpoint($size) {
-	@if $size == 359 { // Extra small devices (portrait phones, less than 640px)
+	@if $size == 359 {
 		@media ( max-width: 359px ) { @content; }
-	} @else if $size == 480 { // Small devices (landscape phones, less than 767px)
+	} @else if $size == 480 {
 		@media ( max-width: 480px ) { @content; }
-	} @else if $size == 568 { // iPhone X landscape
+	} @else if $size == 568 {
 		@media ( max-height: 568px ) { @content; }
-	} @else if $size == 640 { // Medium devices (tablets, 768px and up)
+	} @else if $size == 640 {
 		@media ( max-width: 640px ) { @content; }
-	} @else if $size == 767 { // Large devices (desktops, 1024px and up)
+	} @else if $size == 767 {
 		@media ( max-width: 767px ) { @content; }
-	} @else if $size == 992 { // Extra large devices (large desktops, 1200px and up)
+	} @else if $size == 992 {
 		@media ( max-width: 992px ) { @content; }
-	} @else if $size == 1024 { // Extra large devices (large desktops, 1200px and up)
+	} @else if $size == 1024 {
 		@media ( max-width: 1024px ) { @content; }
-	} @else if $size == 1200 { // Extra large devices (large desktops, 1200px and up)
+	} @else if $size == 1200 {
 		@media ( max-width: 1200px ) { @content; }
 	}
 }
 
+// $keys: 'lightest' 'lighter' 'light' 'base' 'dark' 'darker' 'darkest';
 
+/** Color Variations */
 $colors: (
-	primary: $brand-primary,
-	secondary: $brand-secondary,
-	white: $white,
+	primary: color('brand-primary'),
+	secondary: color('brand-secondary'),
+    offwhite: color('gray-light'),
+	white: color('white'),
+	black: color('black'),
 );
+
 $opacities: (
+	60: 0.60,
 	80: 0.80,
 );
+
+
 @mixin gen-props($prefix, $property) {
 	@each $color-name, $color in $colors {
 		.#{$prefix}-#{$color-name},
 		.hover-#{$prefix}-#{$color-name}:hover {
 			#{$property}: $color
 		}
+
+
+
+		.#{$prefix}-#{$color-name}-lightest,
+		.hover-#{$prefix}-#{$color-name}-lightest:hover {
+			#{$property}: lighten(adjust-hue($color, 9), 10%);
+		}
+
+		.#{$prefix}-#{$color-name}-lighter,
+		.hover-#{$prefix}-#{$color-name}-lighter:hover {
+			#{$property}: lighten(adjust-hue($color, 6), 10%);
+		}
+
 		.#{$prefix}-#{$color-name}-light,
 		.hover-#{$prefix}-#{$color-name}-light:hover {
-			@function pale($color) {
-				$light-color: lighten($color, 8%);
-				@return $light-color;
-			}
-			#{$property}: pale($color);
+			#{$property}: lighten(adjust-hue($color, 3), 10%);
 		}
+
+		.#{$prefix}-#{$color-name}-darkest,
+		.hover-#{$prefix}-#{$color-name}-darkest:hover {
+			#{$property}: darken(adjust-hue($color, -9), 10%);
+		}
+
+		.#{$prefix}-#{$color-name}-darker,
+		.hover-#{$prefix}-#{$color-name}-darker:hover {
+			#{$property}: darken(adjust-hue($color, -6), 10%);
+		}
+
 		.#{$prefix}-#{$color-name}-dark,
 		.hover-#{$prefix}-#{$color-name}-dark:hover {
-			@function pale($color) {
-				$dark-color: darken($color, 8%);
-				@return $dark-color;
-			}
-			#{$property}: pale($color);
+			#{$property}: darken(adjust-hue($color, -3), 10%);
 		}
+
 		@each $opacity-name, $opacity in $opacities {
 			.#{$prefix}-#{$color-name}-#{$opacity-name} {
 				#{$property}: rgba($color, $opacity);
@@ -74,13 +99,29 @@ $opacities: (
 				#{$property}: rgba(pale($color), $opacity);
 			}
 		}
+
+		// fill and hover fill to svg
+		.hover-fill-#{$color-name},
+		.fill-#{$color-name} {
+			fill: $color;
+		}
 	}
 }
 
 @include gen-props('text', 'color');
 @include gen-props('bg', 'background');
 
+@mixin background-opacity($color, $opacity: 0.3) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}
 
+
+.rrr {
+	background-image: linear-gradient(to right, color('primary', 'lighten-1') 25%, color('primary', 'lighten-2') 25%, color('primary', 'lighten-2') 50%, color('primary', 'lighten-3') 50% );
+	background-color: color('primary', 'lighten-1');
+	background: rgba(color('primary', 'lighten-1'), 0.5);
+}
 
 // This is a list of all of our base
 // colors. we loop through this in

@@ -1,0 +1,23 @@
+.blog-image {
+    .image-src {
+        height: 100%;
+        @include breakpoint(480){
+            height: 0;
+            padding-top: 80%;
+        }
+    }
+}
+.blog-content {
+    p {
+        @extend .text-white ;
+    }
+    .link {
+        right:10px;
+        bottom: 10px;
+    }
+}
+.blog-desc {
+    h2 {
+        font-size: 30px;
+    }
+}
